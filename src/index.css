@@ -1,0 +1,25 @@
+.home-jumbotron {
+  height: 300px;
+  text-align: center;
+  background: tomato;
+  color: #fff;
+}
+
+.home-order-btn {
+  margin-top: 1.5em;
+}
+
+.pizza-card {
+
+}
+
+@media only screen and (min-width : 768px) {
+    .is-table-row {
+        display: table;
+    }
+    .is-table-row [class*="col-"] {
+        float: none;
+        display: table-cell;
+        vertical-align: top;
+    }
+}

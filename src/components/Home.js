@@ -4,13 +4,13 @@ import { NavLink } from 'react-router-dom';
 
 const Home = () => (
   <div>
-    <Jumbotron>
+    <Jumbotron className="home-jumbotron">
       <h1>Welcome to Pie in the Sky!</h1>
       <p>
         Piping hot pizzas delivered to your doorstep.
       </p>
       <p>
-        <Button bsStyle="primary">Order now!</Button>
+        <NavLink to="/menu"><Button bsSize="large" bsStyle="primary" className="home-order-btn">Begin your order</Button></NavLink>
       </p>
     </Jumbotron>
   </div>
