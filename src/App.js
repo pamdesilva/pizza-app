@@ -26,6 +26,12 @@ class App extends Component {
   totalPrice: 0
   };
 
+  addToOrder = (key) => {
+    const order = { ...this.state.order};
+    order[key] = order[key] + 1 || 1;
+    this.setState({ order: order});
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -33,7 +39,7 @@ class App extends Component {
           <Header />
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route exact path='/menu' component={Menu} />
+            <Route exact path='/menu' render={ (props) => <Menu {...props} addToOrder={this.addToOrder} /> } />
             <Route exact path='/custom' component={Custom} />
             <Route exact path='/customer-details-form' component={CustomerDetailsForm} />
             <Route exact path='/done' component={Done} />

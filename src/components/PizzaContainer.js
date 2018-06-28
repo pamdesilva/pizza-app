@@ -4,13 +4,14 @@ import { PizzaList } from '../data/pizzas';
 import Pizza from './Pizza';
 
 
-const PizzaContainer = () => {
-  let pizzas = PizzaList.map((pizza) => {
-    return <Pizza name={pizza.name}
-                   toppings={pizza.toppings}
-                   img={pizza.img_src}
-                   price={pizza.price}
-                   key={pizza.id} />
+const PizzaContainer = (props) => {
+  let pizzas = Object.keys(PizzaList).map( key => {
+    return <Pizza
+              key={key}
+              details={PizzaList[key]}
+              addToOrder={props.addToOrder}
+              id={key}
+            />
   });
   return (
       <Row>
@@ -18,6 +19,5 @@ const PizzaContainer = () => {
       </Row>
   );
 }
-
 
 export default PizzaContainer;
