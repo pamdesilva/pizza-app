@@ -1,11 +1,12 @@
 import React from 'react';
+import { Col } from 'react-bootstrap';
 import PizzaContainer from './PizzaContainer';
 
 const Menu = () => (
-  <div>
-    <h1>Choose your pizza</h1>
+  <Col className="menu-page">
+    <h1>Pizzas</h1>
     <PizzaContainer />
-  </div>
+  </Col>
 );
 
 export default Menu;

@@ -1,15 +1,16 @@
 import React from 'react';
-import { Col, Thumbnail, Button } from 'react-bootstrap';
+import { Col, Button, Image } from 'react-bootstrap';
+import { formatPrice, formatToppings } from '../helpers';
 
 const Pizza = (props) => (
- <Col xs={8} md={4} className="pizza-card clearfix">
-  <Thumbnail src={props.img} alt="242x200">
-    <h3>{props.name}</h3>
-    <p>{props.toppings}</p>
-    <p>
-      <Button bsStyle="primary">Add to order</Button>&nbsp;
-    </p>
-  </Thumbnail>
+ <Col xs={12} md={4} className="pizza-card">
+     <Image responsive className="pizza-img" src={props.img} alt="pizza" />
+     <h3>{props.name}</h3>
+     <p>{formatToppings(props.toppings)}</p>
+     <h4>{formatPrice(props.price)}</h4>
+     <p>
+       <Button bsStyle="primary" className="pizza-order-btn">Add to order</Button>&nbsp;
+     </p>
  </Col>
 );
 

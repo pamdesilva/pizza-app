@@ -10,14 +10,14 @@ export const PizzaList = [
     name: 'Margherita',
     id: 'pizza-2',
     toppings: ['mozarella', 'crushed tomatoes', 'basil', 'extra virgin olive oil',],
-    img_src: "http://www.phaidon.com/resource/pizzarobertasfrieze.jpg",
+    img_src: "https://static01.nyt.com/images/2014/04/09/dining/09JPPIZZA2/09JPPIZZA2-articleLarge.jpg",
     price: 895
   },
   {
     name: 'Veggie Crush',
     id: 'pizza-3',
     toppings: ['mozarella', 'mixed peppers', 'crushed tomatoes', 'basil', 'aubergine', 'extra virgin olive oil',],
-    img_src: "https://www.ruchiskitchen.com/wp-content/uploads/2016/02/veggie-pizza-3-1.jpg",
+    img_src: "https://markospizzas.com/wp-content/uploads/2017/12/veggie-pizza.jpg",
     price: 895
   },
   {
@@ -42,7 +42,7 @@ export const PizzaList = [
     price: 1295
   },
   {
-    name: 'Wham Bam, Thank You Ham',
+    name: 'Ham Solo',
     id: 'pizza-7',
     toppings: ['parmegianno', 'ham', 'prosciutto', 'white button mushrooms', 'black olives', 'caramelised onions', 'basil', 'extra virgin olive oil',],
     img_src: "https://realfood.tesco.com/media/images/179295-HERO-f8e074ae-f499-4d4c-af4d-b42d23e96450-0-472x310.jpg",
