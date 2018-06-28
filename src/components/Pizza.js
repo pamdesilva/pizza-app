@@ -6,7 +6,7 @@ class Pizza extends Component {
   render(){
     const {name, toppings, image, price } = this.props.details;
     return(
-      <Col xs={12} md={4} className="pizza-card">
+      <Col xs={6} md={4} className="pizza-card">
           <Image responsive className="pizza-img" src={image} alt="pizza" />
           <h3>{name}</h3>
           <p>{formatToppings(toppings)}</p>

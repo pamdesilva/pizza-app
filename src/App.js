@@ -9,6 +9,7 @@ import Custom from './components/Custom';
 import Done from './components/Done';
 
 class App extends Component {
+
   state = {
     order: [],
     customer: {
@@ -24,12 +25,19 @@ class App extends Component {
     phoneNumber: '',
   },
   totalPrice: 0
-  };
+  }
 
   addToOrder = (key) => {
     const order = { ...this.state.order};
     order[key] = order[key] + 1 || 1;
     this.setState({ order: order});
+  }
+
+  removeFromOrder = (key) => {
+    console.log('remove this pizza');
+    const order = { ...this.state.order};
+    delete order[key];
+    this.setState({ order: order })
   }
 
   render() {
@@ -39,7 +47,7 @@ class App extends Component {
           <Header />
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route exact path='/menu' render={ (props) => <Menu {...props} addToOrder={this.addToOrder} /> } />
+            <Route exact path='/menu' render={ (props) => <Menu {...props} addToOrder={this.addToOrder} removeFromOrder={this.removeFromOrder} order={this.state.order} /> } />
             <Route exact path='/custom' component={Custom} />
             <Route exact path='/customer-details-form' component={CustomerDetailsForm} />
             <Route exact path='/done' component={Done} />

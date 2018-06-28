@@ -14,10 +14,10 @@
 }
 
 .pizza-card {
-  margin: 10px;
+  margin: 5px;
   border: 0.3px solid #80808030;
   width: 22em;
-  padding: 25px;
+  padding: 3%;
   height: 450px;
 }
 
@@ -30,13 +30,20 @@
   margin-top: 15px;
 }
 
-@media only screen and (min-width : 768px) {
-    .is-table-row {
-        display: table;
-    }
-    .is-table-row [class*="col-"] {
-        float: none;
-        display: table-cell;
-        vertical-align: top;
-    }
+.order-item-price {
+  margin: 0 5px 0 5px;
+}
+
+.order-box {
+  background: tomato;
+  list-style-type: none;
+  padding: 10%;
+}
+
+.order-box-item {
+  margin-bottom: 3px;
+}
+
+.order-total {
+  margin-top: 10px;
 }
