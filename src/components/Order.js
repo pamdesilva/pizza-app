@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 import { PizzaList } from '../data/pizzas';
 import { formatPrice } from '../helpers';
 
@@ -20,13 +22,14 @@ class Order extends Component {
 
   render(){
     const orderIds = Object.keys(this.props.order);
-    const total = orderIds.reduce((prevTotal, key) => {
-      const pizza = PizzaList[key];
-      const count = this.props.order[key];
-      return prevTotal + (count * pizza.price);
-    }, 0);
+    //
+    // const total = orderIds.reduce((prevTotal, key) => {
+    //   const pizza = PizzaList[key];
+    //   const count = this.props.order[key];
+    //   return prevTotal + (count * pizza.price);
+    // }, 0);
 
-    if (total === 0) {
+    if (this.props.orderTotal === 0) {
       return (
         <div>
           <h2>Your Order</h2>
@@ -42,7 +45,8 @@ class Order extends Component {
         <h2>Your Order</h2>
         <div className="order-box">
         {orderIds.map(this.renderOrder)}
-        <h4 className="order-total">Total: {formatPrice(total)}</h4>
+        Total: {formatPrice(this.props.orderTotal)}
+        <Link to="/checkout"><Button>Checkout now</Button></Link>
         </div>
       </div>
     );

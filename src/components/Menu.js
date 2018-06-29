@@ -11,7 +11,11 @@ const Menu = (props) => (
         <PizzaContainer addToOrder={props.addToOrder} />
       </Col>
       <Col xs={6} md={4}>
-        <Order order={props.order} removeFromOrder={props.removeFromOrder} />
+        <Order
+          order={props.order}
+          removeFromOrder={props.removeFromOrder}
+          orderTotal={props.orderTotal}
+  />
       </Col>
     </Row>
   </Grid>
