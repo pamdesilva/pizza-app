@@ -35,8 +35,6 @@
 }
 
 .order-box {
-  background: tomato;
-  list-style-type: none;
   padding: 10%;
 }
 
@@ -54,5 +52,10 @@
 }
 
 .order-item {
-  border: 1px solid grey;
+  border: 1px dotted grey;
+  padding: 1em;
+}
+
+.order-header {
+  text-align: center;
 }

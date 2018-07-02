@@ -12,23 +12,23 @@ class Order extends Component {
 
     return(
       <Row className="order-item">
-        <div>
-          <Col xs={12} md={8}>
-            <Image responsive className="pizza-img-order" src={pizza.image} alt="pizza" />
-          </Col>
-          <Col xs={6} md={4}>
-            <span><strong>{count}</strong></span>
-            <span><strong> x {pizza.name}</strong></span>
-            <span className="order-item-price">{formatPrice(count * pizza.price)}</span>
-            <button onClick={() => this.props.removeFromOrder(key)}>ⓧ</button>
-          </Col>
-          </div>
+        <Col xs={2}>
+          <Image className="pizza-img-order" src={pizza.image} alt="pizza" />
+        </Col>
+        <Col xs={6} md={4} className="order-item-text">
+          <span><strong>{count}</strong></span>
+          <span><strong> x {pizza.name}</strong></span>
+          <span className="order-item-price">{formatPrice(count * pizza.price)}</span>
+          <button onClick={() => this.props.removeFromOrder(key)}>ⓧ</button>
+        </Col>
       </Row>
     )
   }
 
   render(){
     const orderIds = Object.keys(this.props.order);
+    const totalPizzaPrice = this.props.orderTotal;
+    const deliveryPrice = this.props.orderTotal < 1200 ? 500 : 0;
 
     if (this.props.orderTotal === 0) {
       return (
@@ -42,19 +42,24 @@ class Order extends Component {
     }
 
     return(
-      <div>
-        <h2>Your Order</h2>
-        <Grid>
+        <Grid className="order-box">
+          <h2 className="order-header">Your Order</h2>
+          <Col>
+          <Row>
             {orderIds.map(this.renderOrder)}
+          </Row>
+          </Col>
+          <Col>
+          <Row>
+            <p>Delivery: {formatPrice(deliveryPrice)}</p>
+            <p>Items: {formatPrice(totalPizzaPrice)}</p>
+            <p>Total: {formatPrice(totalPizzaPrice + deliveryPrice)}</p>
+            <p>
+              <Link to="/checkout"><Button>Checkout now</Button></Link>
+            </p>
+          </Row>
+          </Col>
         </Grid>
-        Total: {formatPrice(this.props.orderTotal)}
-        <p>
-          <Link to="/checkout">
-            <Button>Checkout now</Button>
-          </Link>
-        </p>
-
-      </div>
     );
   }
 }
