@@ -8,6 +8,7 @@ import CustomerDetailsForm from './components/CustomerDetailsForm';
 import Menu from './components/Menu';
 import Custom from './components/Custom';
 import Done from './components/Done';
+import Cart from './components/Cart';
 
 class App extends Component {
 
@@ -26,6 +27,23 @@ class App extends Component {
       email: '',
       phoneNumber: '',
     }
+  }
+
+  componentDidMount(){
+    const localStorageOrder = localStorage.getItem('order');
+    const localStorageTotal = localStorage.getItem('orderTotal');
+    if(localStorageOrder) {
+      this.setState({
+        order: JSON.parse(localStorageOrder),
+        orderTotal: JSON.parse(localStorageTotal)
+      });
+    }
+  }
+
+  componentDidUpdate(){
+    console.log('It updated!');
+    localStorage.setItem('order', JSON.stringify(this.state.order));
+    localStorage.setItem('orderTotal', JSON.stringify(this.state.orderTotal));
   }
 
   addToOrder = (key) => {
@@ -58,6 +76,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/menu' render={ (props) => <Menu {...props} orderTotal={this.state.orderTotal} addToOrder={this.addToOrder} removeFromOrder={this.removeFromOrder} order={this.state.order} /> } />
+            <Route exact path='/cart' render={ (props) => <Cart {...props} orderTotal={this.state.orderTotal} removeFromOrder={this.removeFromOrder} order={this.state.order} /> } />
             <Route exact path='/custom' component={Custom} />
             <Route exact path='/customer-details-form' component={CustomerDetailsForm} />
             <Route exact path='/done' component={Done} />

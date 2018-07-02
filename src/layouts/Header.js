@@ -12,7 +12,10 @@ const Header = (props) => (
       <Navbar.Toggle />
     </Navbar.Header>
     <Nav pullRight>
-    <NavItem>
+    <NavItem eventKey={1} href="/menu">
+      Menu
+    </NavItem>
+    <NavItem eventKey={2} href="/cart">
       🍕{formatPrice(props.orderTotal)}
     </NavItem>
   </Nav>

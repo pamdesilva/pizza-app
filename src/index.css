@@ -47,3 +47,12 @@
 .order-total {
   margin-top: 10px;
 }
+
+
+.pizza-img-order {
+  height: 60px;
+}
+
+.order-item {
+  border: 1px solid grey;
+}

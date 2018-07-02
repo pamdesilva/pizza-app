@@ -10,7 +10,7 @@ const PizzaContainer = (props) => {
               key={key}
               details={PizzaList[key]}
               addToOrder={props.addToOrder}
-              id={key}
+              index={key}
             />
   });
   return (
