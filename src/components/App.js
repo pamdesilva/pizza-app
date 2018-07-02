@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { PizzaList } from './data/pizzas';
+import { PizzaList } from '../data/pizzas';
 
-import Header from './layouts/Header';
-import Home from './components/Home';
-import CustomerDetailsForm from './components/CustomerDetailsForm';
-import Menu from './components/Menu';
-import Custom from './components/Custom';
-import Done from './components/Done';
-import Cart from './components/Cart';
+import Header from '../layouts/Header';
+import Home from './Home';
+import CustomerDetailsForm from './CustomerDetailsForm';
+import Menu from './Menu';
+import Custom from './Custom';
+import Done from './Done';
+import Cart from './Cart';
 
 class App extends Component {
 

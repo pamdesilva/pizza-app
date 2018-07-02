@@ -1,15 +1,12 @@
 import React from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Container } from 'semantic-ui-react';
 import PizzaContainer from './PizzaContainer';
 
 const Menu = (props) => (
-  <Grid>
-    <Row className="show-grid">
-      <h1>Pizzas</h1>
-        <PizzaContainer addToOrder={props.addToOrder} />
-    </Row>
-  </Grid>
-
+  <Container>
+    <h1 id="menu-header">Pizzas</h1>
+    <PizzaContainer addToOrder={props.addToOrder} />
+  </Container>
 );
 
 export default Menu;

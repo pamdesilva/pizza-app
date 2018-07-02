@@ -1,16 +1,21 @@
-.header {
-  margin-bottom: 3em;
+#nav-bar {
+  background: salmon;
 }
 
-.home-jumbotron {
-  height: 300px;
+#home-jumbotron {
+  height: 400px;
   text-align: center;
-  background: tomato;
-  color: #fff;
+  padding-top: 100px;
 }
 
-.home-order-btn {
+#home-order-btn {
   margin-top: 1.5em;
+}
+
+#menu-header {
+  text-align: center;
+  margin-bottom: 2em;
+  margin-top: 2em;
 }
 
 .pizza-card {
