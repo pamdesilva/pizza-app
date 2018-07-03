@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row } from 'react-bootstrap';
+import { Grid } from 'semantic-ui-react';
 import { PizzaList } from '../data/pizzas';
 import Pizza from './Pizza';
 
@@ -14,9 +14,9 @@ const PizzaContainer = (props) => {
             />
   });
   return (
-      <Row>
+      <Grid stackable columns={3}>
         {pizzas}
-      </Row>
+      </Grid>
   );
 }
 

@@ -51,7 +51,7 @@ class Order extends Component {
           </Col>
           <Col>
           <Row>
-            <p>Delivery: {formatPrice(deliveryPrice)}</p>
+            <p>Delivery (free over £12): {formatPrice(deliveryPrice)}</p>
             <p>Items: {formatPrice(totalPizzaPrice)}</p>
             <p>Total: {formatPrice(totalPizzaPrice + deliveryPrice)}</p>
             <p>

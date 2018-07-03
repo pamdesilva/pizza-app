@@ -18,17 +18,16 @@
   margin-top: 2em;
 }
 
-.pizza-card {
-  margin: 5px;
-  border: 0.3px solid #80808030;
-  width: 22em;
-  padding: 3%;
-  height: 450px;
+#menu-pizza-img {
+  height: 180px;
 }
 
-.pizza-img {
-  height: 180px;
-  border-radius: 3px;
+#menu-total {
+  text-align: right;
+}
+
+#menu-checkout-btn {
+  margin-left: 2em;
 }
 
 .pizza-order-btn {
