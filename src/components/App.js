@@ -15,6 +15,7 @@ class App extends Component {
   state = {
     order: [],
     orderTotal: 0,
+    checkoutTotal: 0,
     customer: {
       firstName: '',
       lastName: '',
@@ -68,6 +69,12 @@ class App extends Component {
     });
   }
 
+  updateCheckoutTotal = (newTotal) => {
+    this.setState({
+      checkoutTotal: newTotal
+    });
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -76,7 +83,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/menu' render={ (props) => <Menu {...props} orderTotal={this.state.orderTotal} addToOrder={this.addToOrder} removeFromOrder={this.removeFromOrder} order={this.state.order} /> } />
-            <Route exact path='/cart' render={ (props) => <Cart {...props} orderTotal={this.state.orderTotal} removeFromOrder={this.removeFromOrder} order={this.state.order} /> } />
+            <Route exact path='/cart' render={ (props) => <Cart {...props} orderTotal={this.state.orderTotal} removeFromOrder={this.removeFromOrder} order={this.state.order} updateCheckoutTotal={this.updateCheckoutTotal} /> } />
             <Route exact path='/custom' component={Custom} />
             <Route exact path='/customer-details-form' component={CustomerDetailsForm} />
             <Route exact path='/done' component={Done} />

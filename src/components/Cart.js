@@ -32,6 +32,7 @@ class Order extends Component {
     const orderIds = Object.keys(this.props.order);
     const totalPizzaPrice = this.props.orderTotal;
     const deliveryPrice = this.props.orderTotal < 1200 ? 500 : 0;
+    const checkoutTotal = totalPizzaPrice + deliveryPrice;
 
     if (this.props.orderTotal === 0) {
       return (
@@ -52,8 +53,8 @@ class Order extends Component {
           <Segment inverted color='violet' id="order-total">
             <p><strong>Order:</strong>  {formatPrice(totalPizzaPrice)}</p>
             <p><strong>Delivery:</strong>  {formatPrice(deliveryPrice)}</p>
-            <p><strong>Total:</strong>  {formatPrice(totalPizzaPrice + deliveryPrice)}</p>
-            <Button as={Link} to="/checkout">Checkout now</Button>
+            <p><strong>Total:</strong>  {formatPrice(checkoutTotal)}</p>
+            <Button as={Link} to="/checkout" onClick={() => this.props.updateCheckoutTotal(checkoutTotal)}>Checkout now</Button>
           </Segment>
           </Container>
         </Container>
