@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Image, Button, Segment } from 'semantic-ui-react';
+import { Grid, Image, Button, Segment, Header } from 'semantic-ui-react';
 import { formatPrice, formatToppings } from '../helpers';
 
 class Pizza extends Component {
@@ -9,9 +9,9 @@ class Pizza extends Component {
       <Grid.Column>
         <Segment>
           <Image id="menu-pizza-img" src={image} />
-          <h3>{name}</h3>
+          <Header as='h3'>{name}</Header>
           <p>{formatToppings(toppings)}</p>
-          <h4>{formatPrice(price)}</h4>
+          <Header as='h4'>{formatPrice(price)}</Header>
           <p>
             <Button onClick={() => this.props.addToOrder(this.props.index)}>Add to order</Button>
           </p>

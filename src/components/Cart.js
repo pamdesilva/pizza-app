@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link  } from 'react-router-dom';
-import { Grid, Row, Col, Button, ListGroup, ListGroupItem, Image } from 'react-bootstrap';
+import { Grid, Image, Button, Segment, Container, Icon, Header } from 'semantic-ui-react';
 import { PizzaList } from '../data/pizzas';
 import { formatPrice } from '../helpers';
 
@@ -11,17 +11,20 @@ class Order extends Component {
     const count = this.props.order[key];
 
     return(
-      <Row className="order-item">
-        <Col xs={2}>
-          <Image className="pizza-img-order" src={pizza.image} alt="pizza" />
-        </Col>
-        <Col xs={6} md={4} className="order-item-text">
-          <span><strong>{count}</strong></span>
-          <span><strong> x {pizza.name}</strong></span>
-          <span className="order-item-price">{formatPrice(count * pizza.price)}</span>
-          <button onClick={() => this.props.removeFromOrder(key)}>ⓧ</button>
-        </Col>
-      </Row>
+      <Segment raised>
+        <Grid>
+          <Grid.Row>
+            <Grid.Column width={4}>
+              <Image src={pizza.image} />
+            </Grid.Column>
+            <Grid.Column width={12}>
+              <p><strong>{pizza.name}</strong><Icon name='delete' circular id="order-delete" onClick={() => this.props.removeFromOrder(key)} /></p>
+              <p>Quantity: {count}</p>
+              <p>Price per pizza: {formatPrice(count * pizza.price)}</p>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </Segment>
     )
   }
 
@@ -33,7 +36,7 @@ class Order extends Component {
     if (this.props.orderTotal === 0) {
       return (
         <div>
-          <h2>Your Order</h2>
+          <Header as='h1' id="order-header">Your Order</Header>
           <div className="order-box">
             <h4>Your cart is empty. Add some pizzas.</h4>
           </div>
@@ -42,24 +45,18 @@ class Order extends Component {
     }
 
     return(
-        <Grid className="order-box">
-          <h2 className="order-header">Your Order</h2>
-          <Col>
-          <Row>
-            {orderIds.map(this.renderOrder)}
-          </Row>
-          </Col>
-          <Col>
-          <Row>
-            <p>Delivery (free over £12): {formatPrice(deliveryPrice)}</p>
-            <p>Items: {formatPrice(totalPizzaPrice)}</p>
-            <p>Total: {formatPrice(totalPizzaPrice + deliveryPrice)}</p>
-            <p>
-              <Link to="/checkout"><Button>Checkout now</Button></Link>
-            </p>
-          </Row>
-          </Col>
-        </Grid>
+        <Container>
+          <Header as='h1' id="order-header">Your Order</Header>
+          <Container id="order-box">
+          {orderIds.map(this.renderOrder)}
+          <Segment inverted color='violet' id="order-total">
+            <p><strong>Order:</strong>  {formatPrice(totalPizzaPrice)}</p>
+            <p><strong>Delivery:</strong>  {formatPrice(deliveryPrice)}</p>
+            <p><strong>Total:</strong>  {formatPrice(totalPizzaPrice + deliveryPrice)}</p>
+            <Button as={Link} to="/checkout">Checkout now</Button>
+          </Segment>
+          </Container>
+        </Container>
     );
   }
 }

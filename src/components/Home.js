@@ -1,11 +1,11 @@
 import React from 'react';
-import { Segment, Button } from 'semantic-ui-react';
+import { Segment, Button, Header } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => (
   <div >
     <Segment id="home-jumbotron">
-      <h1>Welcome to Pie in the Sky!</h1>
+      <Header as="h1">Welcome to Pie in the Sky!</Header>
       <p>
         Piping hot pizzas delivered to your doorstep.
       </p>
