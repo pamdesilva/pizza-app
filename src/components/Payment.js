@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Done = () => (
+const Payment = () => (
   <h1>Here's what you've ordered!</h1>
 );
 
-export default Done;
+export default Payment;

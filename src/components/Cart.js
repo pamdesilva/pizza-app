@@ -11,7 +11,7 @@ class Order extends Component {
     const count = this.props.order[key];
 
     return(
-      <Segment raised>
+      <Segment raised key={key}>
         <Grid>
           <Grid.Row>
             <Grid.Column width={4}>
@@ -37,7 +37,7 @@ class Order extends Component {
     if (this.props.orderTotal === 0) {
       return (
         <div>
-          <Header as='h1' id="order-header">Your Order</Header>
+          <Header as='h1' id="page-header">Your Order</Header>
           <div className="order-box">
             <h4>Your cart is empty. Add some pizzas.</h4>
           </div>
@@ -47,14 +47,14 @@ class Order extends Component {
 
     return(
         <Container>
-          <Header as='h1' id="order-header">Your Order</Header>
+          <Header as='h1' id="page-header">Your Order</Header>
           <Container id="order-box">
           {orderIds.map(this.renderOrder)}
           <Segment inverted color='violet' id="order-total">
             <p><strong>Order:</strong>  {formatPrice(totalPizzaPrice)}</p>
             <p><strong>Delivery:</strong>  {formatPrice(deliveryPrice)}</p>
             <p><strong>Total:</strong>  {formatPrice(checkoutTotal)}</p>
-            <Button as={Link} to="/customer-details" onClick={() => this.props.updateCheckoutTotal(checkoutTotal)}>Checkout now</Button>
+            <Button as={Link} to="/customer-details" size='large' onClick={() => this.props.updateCheckoutTotal(checkoutTotal)}>Confirm Order</Button>
           </Segment>
           </Container>
         </Container>

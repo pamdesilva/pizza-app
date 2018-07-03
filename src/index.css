@@ -12,7 +12,7 @@
   margin-top: 1.5em;
 }
 
-#menu-header {
+#page-header {
   text-align: center;
   margin-bottom: 2em;
   margin-top: 2em;
@@ -23,17 +23,11 @@
 }
 
 #menu-total {
-  text-align: right;
+
 }
 
 #menu-checkout-btn {
   margin-left: 2em;
-}
-
-#order-header {
-  text-align: center;
-  margin-top: 2em;
-  margin-bottom: 2em;
 }
 
 #order-box {
@@ -41,7 +35,7 @@
 }
 
 #order-delete {
-  cursor: grabbing;
+  cursor: pointer;
   margin-left: 1em;
 }
 
@@ -51,19 +45,10 @@
   padding: 2em;
 }
 
-.pizza-order-btn {
-  margin-top: 15px;
+#form-box {
+  width: 70%;
 }
 
-.order-item-price {
-  margin: 0 5px 0 5px;
-}
-
-.pizza-img-order {
-  height: 60px;
-}
-
-.order-item {
-  border: 1px dotted grey;
-  padding: 1em;
+#form-confirm {
+  margin-top: 2em;
 }

@@ -6,11 +6,11 @@ import PizzaContainer from './PizzaContainer';
 
 const Menu = (props) => (
   <Container>
-    <Header as="h1" id="menu-header">Pizzas</Header>
+    <Header as="h1" id="page-header">Pizzas</Header>
     <PizzaContainer addToOrder={props.addToOrder} />
-    <Segment id="menu-total">
-      Total: {formatPrice(props.orderTotal)}
-      <Button primary as={Link} to="/cart" id="menu-checkout-btn">Checkout</Button>
+    <Segment id="menu-total" textAlign="right">
+      <strong>Total: {formatPrice(props.orderTotal)}</strong>
+      <Button as={Link} to="/cart" id="menu-checkout-btn" color='violet' size='large'>Checkout</Button>
     </Segment>
   </Container>
 );
