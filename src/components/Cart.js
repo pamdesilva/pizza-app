@@ -54,7 +54,7 @@ class Order extends Component {
             <p><strong>Order:</strong>  {formatPrice(totalPizzaPrice)}</p>
             <p><strong>Delivery:</strong>  {formatPrice(deliveryPrice)}</p>
             <p><strong>Total:</strong>  {formatPrice(checkoutTotal)}</p>
-            <Button as={Link} to="/checkout" onClick={() => this.props.updateCheckoutTotal(checkoutTotal)}>Checkout now</Button>
+            <Button as={Link} to="/customer-details" onClick={() => this.props.updateCheckoutTotal(checkoutTotal)}>Checkout now</Button>
           </Segment>
           </Container>
         </Container>

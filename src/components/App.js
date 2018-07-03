@@ -19,14 +19,9 @@ class App extends Component {
     customer: {
       firstName: '',
       lastName: '',
-      address: {
-          addressLineOne: '',
-          addressLineTwo: '',
-          town: '',
-          postcode: ''
-        },
       email: '',
       phoneNumber: '',
+      address: '',
     }
   }
 
@@ -85,7 +80,7 @@ class App extends Component {
             <Route exact path='/menu' render={ (props) => <Menu {...props} orderTotal={this.state.orderTotal} addToOrder={this.addToOrder} removeFromOrder={this.removeFromOrder} order={this.state.order} /> } />
             <Route exact path='/cart' render={ (props) => <Cart {...props} orderTotal={this.state.orderTotal} removeFromOrder={this.removeFromOrder} order={this.state.order} updateCheckoutTotal={this.updateCheckoutTotal} /> } />
             <Route exact path='/custom' component={Custom} />
-            <Route exact path='/customer-details-form' component={CustomerDetailsForm} />
+            <Route exact path='/customer-details' component={CustomerDetailsForm} />
             <Route exact path='/done' component={Done} />
           </Switch>
         </div>
