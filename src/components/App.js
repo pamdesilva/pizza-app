@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Container } from 'semantic-ui-react'
+import {StripeProvider} from 'react-stripe-elements';
 import { PizzaList } from '../data/pizzas';
 
 import Header from '../layouts/Header';
@@ -92,11 +93,30 @@ class App extends Component {
           <Header order={this.state.order} orderTotal={this.state.orderTotal}/>
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route exact path='/menu' render={ (props) => <Menu {...props} orderTotal={this.state.orderTotal} addToOrder={this.addToOrder} removeFromOrder={this.removeFromOrder} order={this.state.order} /> } />
-            <Route exact path='/cart' render={ (props) => <Cart {...props} orderTotal={this.state.orderTotal} removeFromOrder={this.removeFromOrder} order={this.state.order} updateCheckoutTotal={this.updateCheckoutTotal} /> } />
-            <Route exact path='/customer-details' render= { (props) => <CustomerDetailsForm {...props} customerDetails={this.state.customer} checkoutTotal={this.state.checkoutTotal}
-            updateCustomerDetails={this.updateCustomerDetails} /> } />
-            <Route exact path='/payment' component={Payment} />
+            <Route exact path='/menu' render={ (props) =>
+                <Menu {...props}
+                  orderTotal={this.state.orderTotal}
+                  addToOrder={this.addToOrder}
+                  removeFromOrder={this.removeFromOrder}
+                  order={this.state.order} /> } />
+            <Route exact path='/cart' render={ (props) =>
+                <Cart {...props}
+                  orderTotal={this.state.orderTotal}
+                  removeFromOrder={this.removeFromOrder}
+                  order={this.state.order}
+                  updateCheckoutTotal={this.updateCheckoutTotal} /> } />
+            <Route exact path='/customer-details' render= { (props) =>
+                <CustomerDetailsForm {...props}
+                  customerDetails={this.state.customer}
+                  checkoutTotal={this.state.checkoutTotal}
+                  updateCustomerDetails={this.updateCustomerDetails} /> } />
+            <Route exact path='/payment' render={ (props) =>
+                <StripeProvider apiKey="pk_test_12345">
+                  <Payment {...props}
+                    orderTotal={this.state.orderTotal}
+                    order={this.state.order}
+                    customerDetails={this.state.customer} />
+                </StripeProvider> } />
             </Switch>
           </Fragment>
         </BrowserRouter>

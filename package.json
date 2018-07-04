@@ -10,6 +10,7 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
+    "react-stripe-elements": "^2.0.0",
     "semantic-ui-react": "^0.81.3"
   },
   "scripts": {

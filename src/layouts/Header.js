@@ -4,7 +4,6 @@ import { Menu } from 'semantic-ui-react';
 import { formatPrice } from '../helpers';
 
 const Header = (props) => (
-
   <Menu secondary id="nav-bar">
     <Menu.Item as={Link} to="/" header id="nav-header">Pie in the Sky 🍕</Menu.Item>
     <div className="item right">

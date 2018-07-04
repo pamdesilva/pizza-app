@@ -4,7 +4,7 @@ import { Grid, Image, Button, Segment, Container, Icon, Header } from 'semantic-
 import { PizzaList } from '../data/pizzas';
 import { formatPrice } from '../helpers';
 
-class Order extends Component {
+class Cart extends Component {
 
   renderOrder = (key) => {
     const pizza = PizzaList[key];
@@ -62,4 +62,4 @@ class Order extends Component {
   }
 }
 
-export default Order;
+export default Cart;
