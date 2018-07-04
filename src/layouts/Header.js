@@ -6,7 +6,7 @@ import { formatPrice } from '../helpers';
 const Header = (props) => (
 
   <Menu secondary id="nav-bar">
-    <Menu.Item as={Link} to="/" header>Pie in the Sky 🍕</Menu.Item>
+    <Menu.Item as={Link} to="/" header id="nav-header">Pie in the Sky 🍕</Menu.Item>
     <div className="item right">
       <Menu.Item as={Link} to="/menu" name="Menu"/>
       <Menu.Item as={Link} to="/cart">{formatPrice(props.orderTotal)}</Menu.Item>

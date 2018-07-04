@@ -10,7 +10,7 @@ const Home = () => (
         Piping hot pizzas delivered to your doorstep.
       </p>
       <p>
-        <Link to="/menu"><Button primary size='big' id="home-order-btn">Begin your order</Button></Link>
+        <Link to="/menu"><Button color='violet' size='big' id="home-order-btn">Begin your order</Button></Link>
       </p>
     </Segment>
   </div>

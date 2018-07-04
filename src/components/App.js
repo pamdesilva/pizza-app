@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Container } from 'semantic-ui-react'
 import { PizzaList } from '../data/pizzas';
@@ -88,7 +88,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <Container>
+        <Fragment>
           <Header order={this.state.order} orderTotal={this.state.orderTotal}/>
           <Switch>
             <Route exact path='/' component={Home} />
@@ -98,7 +98,7 @@ class App extends Component {
             updateCustomerDetails={this.updateCustomerDetails} /> } />
             <Route exact path='/payment' component={Payment} />
             </Switch>
-          </Container>
+          </Fragment>
         </BrowserRouter>
     );
   }

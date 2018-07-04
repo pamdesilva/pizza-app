@@ -1,5 +1,12 @@
 #nav-bar {
-  background: salmon;
+  margin-bottom: 0;
+  background: #6435c9;
+}
+
+#nav-header {
+  font-family: 'Pacifico', cursive;
+  font-size: 2em;
+  color: #fff;
 }
 
 #home-jumbotron {
