@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Container, Header, Segment, Form, Button } from 'semantic-ui-react';
 import {Elements} from 'react-stripe-elements';
-import Cart from './Cart';
+import ReviewOrder from './payment/ReviewOrder';
 import DeliveryInfo from './payment/DeliveryInfo'
 import PaymentForm from './payment/PaymentForm';
 
@@ -13,14 +13,15 @@ const Payment = (props) => (
         <Header as='h2'>Review Your Order</Header>
         <Grid.Column>
           <Segment>
-            <DeliveryInfo
-              customerDetails={props.customerDetails}
-            />
+            <DeliveryInfo customerDetails={props.customerDetails} />
           </Segment>
         </Grid.Column>
         <Grid.Column>
           <Segment>
-            Hey
+            <Header as='h4'>Your Order</Header>
+            <ReviewOrder
+              order={props.order}
+            />
           </Segment>
         </Grid.Column>
       </Segment>

@@ -3,33 +3,12 @@ import { Link  } from 'react-router-dom';
 import { Grid, Image, Button, Segment, Container, Icon, Header } from 'semantic-ui-react';
 import { PizzaList } from '../data/pizzas';
 import { formatPrice } from '../helpers';
+import Order from './Order';
 
 class Cart extends Component {
 
-  renderOrder = (key) => {
-    const pizza = PizzaList[key];
-    const count = this.props.order[key];
-
-    return(
-      <Segment raised key={key}>
-        <Grid>
-          <Grid.Row>
-            <Grid.Column width={4}>
-              <Image src={pizza.image} />
-            </Grid.Column>
-            <Grid.Column width={12}>
-              <p><strong>{pizza.name}</strong><Icon name='delete' circular id="order-delete" onClick={() => this.props.removeFromOrder(key)} /></p>
-              <p>Quantity: {count}</p>
-              <p>Price per pizza: {formatPrice(count * pizza.price)}</p>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Segment>
-    )
-  }
-
   render(){
-    const orderIds = Object.keys(this.props.order);
+
     const totalPizzaPrice = this.props.orderTotal;
     const deliveryPrice = this.props.orderTotal < 1200 ? 500 : 0;
     const checkoutTotal = totalPizzaPrice + deliveryPrice;
@@ -49,13 +28,16 @@ class Cart extends Component {
         <Container>
           <Header as='h1' id="page-header">Your Order</Header>
           <Container id="order-box">
-          {orderIds.map(this.renderOrder)}
-          <Segment inverted color='violet' id="order-total">
-            <p><strong>Order:</strong>  {formatPrice(totalPizzaPrice)}</p>
-            <p><strong>Delivery:</strong>  {formatPrice(deliveryPrice)}</p>
-            <p><strong>Total:</strong>  {formatPrice(checkoutTotal)}</p>
-            <Button as={Link} to="/customer-details" size='large' onClick={() => this.props.updateCheckoutTotal(checkoutTotal)}>Confirm Order</Button>
-          </Segment>
+            <Order
+              order={this.props.order}
+              removeFromOrder={this.props.removeFromOrder}
+            />
+            <Segment inverted color='violet' id="order-total">
+              <p><strong>Order:</strong>  {formatPrice(totalPizzaPrice)}</p>
+              <p><strong>Delivery:</strong>  {formatPrice(deliveryPrice)}</p>
+              <p><strong>Total:</strong>  {formatPrice(checkoutTotal)}</p>
+              <Button as={Link} to="/customer-details" size='large' onClick={() => this.props.updateCheckoutTotal(checkoutTotal)}>Confirm Order</Button>
+            </Segment>
           </Container>
         </Container>
     );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { CardNumberElement, CardExpiryElement, CardCVCElement, CardElement, PostalCodeElement } from 'react-stripe-elements';
+import { CardElement } from 'react-stripe-elements';
 import { Segment } from 'semantic-ui-react';
 
 class CardSection extends Component {
