@@ -9,14 +9,34 @@
   color: #fff;
 }
 
-#home-jumbotron {
-  height: 400px;
-  text-align: center;
-  padding-top: 100px;
+#home-page {
+  background: url(./assets/pizza-background.jpg) no-repeat center center fixed;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  color: #fff;
 }
 
-#home-order-btn {
-  margin-top: 1.5em;
+#home-logo {
+  font-family: 'Pacifico', cursive;
+  margin-left: 0.5em;
+  margin-top: 0.5em;
+  font-size: 3em;
+}
+
+#home-content {
+  margin-top: 8em;
+  font-size: 1.5em;
+}
+
+#home-header {
+  font-size: 3em;
+  margin-bottom: .8em;
+  color: #6335ca;
 }
 
 #page-header {

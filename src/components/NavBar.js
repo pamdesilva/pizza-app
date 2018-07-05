@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Menu } from 'semantic-ui-react';
 import { formatPrice } from '../helpers';
 
-const Header = (props) => (
+const NavBar = (props) => (
   <Menu secondary id="nav-bar">
     <Menu.Item as={Link} to="/" header id="nav-header">Pie in the Sky 🍕</Menu.Item>
     <div className="item right">
@@ -13,4 +13,4 @@ const Header = (props) => (
   </Menu>
 );
 
-export default Header;
+export default NavBar;

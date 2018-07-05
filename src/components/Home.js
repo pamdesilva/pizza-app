@@ -1,18 +1,22 @@
 import React from 'react';
-import { Segment, Button, Header } from 'semantic-ui-react';
+import { Container, Segment, Button, Header, Form } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => (
-  <div >
-    <Segment id="home-jumbotron">
-      <Header as="h1">Welcome to Pie in the Sky!</Header>
-      <p>
-        Piping hot pizzas delivered to your doorstep.
-      </p>
-      <p>
-        <Link to="/menu"><Button color='violet' size='big' id="home-order-btn">Begin your order</Button></Link>
-      </p>
-    </Segment>
+    <div id='home-page'>
+      <Header as='h1' as={Link} to='./' id="home-logo">Slices</Header>
+      <Container id="home-content">
+        <Container>
+          <Header id="home-header">The best pizzas in town!</Header>
+          <p>Find out if we deliver to your hood</p>
+          <Form size='huge'>
+          <Form.Group>
+            <Form.Input placeholder='Enter your postcode' width={6} id='home-postcode-input' />
+            <Form.Button color='violet' id='home-postcode-btn' size='huge' width={10}>Check now</Form.Button>
+          </Form.Group>
+          </Form>
+        </Container>
+      </Container>
   </div>
 );
 

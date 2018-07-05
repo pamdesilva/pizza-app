@@ -4,7 +4,6 @@ import { Container } from 'semantic-ui-react'
 import {StripeProvider} from 'react-stripe-elements';
 import { PizzaList } from '../data/pizzas';
 
-import Header from '../layouts/Header';
 import Home from './Home';
 import CustomerDetailsForm from './CustomerDetailsForm';
 import Menu from './Menu';
@@ -90,7 +89,6 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Fragment>
-          <Header order={this.state.order} orderTotal={this.state.orderTotal}/>
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/menu' render={ (props) =>
@@ -111,7 +109,7 @@ class App extends Component {
                   checkoutTotal={this.state.checkoutTotal}
                   updateCustomerDetails={this.updateCustomerDetails} /> } />
             <Route exact path='/payment' render={ (props) =>
-                <StripeProvider apiKey="pk_test_12345">
+                <StripeProvider apiKey='pk_test_12345'>
                   <Payment {...props}
                     orderTotal={this.state.orderTotal}
                     order={this.state.order}
