@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Container } from 'semantic-ui-react'
 import {StripeProvider} from 'react-stripe-elements';
 import { PizzaList } from '../data/pizzas';
 
@@ -43,7 +42,6 @@ class App extends Component {
   }
 
   componentDidUpdate(){
-    console.log('It updated!');
     localStorage.setItem('order', JSON.stringify(this.state.order));
     localStorage.setItem('orderAmount', JSON.stringify(this.state.orderTotal));
     localStorage.setItem('total', JSON.stringify(this.state.checkoutTotal));

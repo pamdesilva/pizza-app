@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import {injectStripe, CardElement} from 'react-stripe-elements';
-import { Grid, Container, Header, Segment, Form, Button } from 'semantic-ui-react';
+import {injectStripe } from 'react-stripe-elements';
+import { Form, Button } from 'semantic-ui-react';
 
-import AddressSection from './AddressSection';
 import CardSection from './CardSection';
 
 class PaymentForm extends Component {

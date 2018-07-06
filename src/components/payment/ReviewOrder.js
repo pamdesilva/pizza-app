@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Image, Button, Segment, Icon } from 'semantic-ui-react';
+import { Grid, Image, Segment } from 'semantic-ui-react';
 import { PizzaList } from '../../data/pizzas';
 import { formatPrice } from '../../helpers';
 

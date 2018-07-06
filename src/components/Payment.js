@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Container, Header, Segment, Form, Button } from 'semantic-ui-react';
+import { Grid, Container, Header, Segment } from 'semantic-ui-react';
 import {Elements} from 'react-stripe-elements';
 import ReviewOrder from './payment/ReviewOrder';
 import DeliveryInfo from './payment/DeliveryInfo'

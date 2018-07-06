@@ -57,7 +57,7 @@ class Home extends Component {
         <Modal open={!this.state.validPostcode} size='mini'>
           <Modal.Header>Oh snap!</Modal.Header>
           <Modal.Content>
-            <p>We're sorry but your location is outside our delivery area 😿</p>
+            <p>We're sorry but your location is outside our delivery area.</p>
           </Modal.Content>
           <Modal.Actions>
             <Button onClick={this.closeModal} color='violet'>Try another postcode</Button>

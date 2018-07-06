@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link  } from 'react-router-dom';
-import { Grid, Header, Container, Segment, Button } from 'semantic-ui-react';
+import { Grid, Header, Container, Button } from 'semantic-ui-react';
 import { formatPrice } from '../helpers';
 import NavBar from './NavBar';
 import PizzaContainer from './PizzaContainer';

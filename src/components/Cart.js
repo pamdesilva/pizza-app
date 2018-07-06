@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link  } from 'react-router-dom';
-import { Grid, Image, Button, Segment, Container, Icon, Header } from 'semantic-ui-react';
-import { PizzaList } from '../data/pizzas';
+import { Grid, Button, Container, Header } from 'semantic-ui-react';
 import { formatPrice } from '../helpers';
 import NavBar from './NavBar';
 import Order from './Order';
