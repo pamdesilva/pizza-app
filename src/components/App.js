@@ -4,10 +4,9 @@ import {StripeProvider} from 'react-stripe-elements';
 import { PizzaList } from '../data/pizzas';
 
 import Home from './Home';
-import CustomerDetailsForm from './CustomerDetailsForm';
 import Menu from './Menu';
-import Checkout from './Checkout';
 import Cart from './Cart';
+import Checkout from './Checkout';
 
 class App extends Component {
 
@@ -110,12 +109,7 @@ class App extends Component {
                 removeFromOrder={this.removeFromOrder}
                 order={this.state.order}
                 updateCheckoutTotal={this.updateCheckoutTotal} /> } />
-            <Route exact path='/customer-details' render= { (props) =>
-              <CustomerDetailsForm {...props}
-                customerDetails={this.state.customer}
-                checkoutTotal={this.state.checkoutTotal}
-                updateCustomerDetails={this.updateCustomerDetails} /> } />
-            <Route exact path='/payment' render={ (props) =>
+              <Route exact path='/checkout' render={ (props) =>
               <StripeProvider apiKey='pk_test_12345'>
                 <Checkout {...props}
                   orderTotal={this.state.orderTotal}

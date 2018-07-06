@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Grid, Container, Header, Segment, Accordion, Icon, Button } from 'semantic-ui-react';
+import { Link  } from 'react-router-dom';
+import { Grid, Container, Header, Accordion, Icon, Button } from 'semantic-ui-react';
 import {Elements} from 'react-stripe-elements';
 import NavBar from './NavBar';
 import PaymentForm from './payment/PaymentForm';
 import CustomerDetailsForm from './CustomerDetailsForm';
-
+import { formatPrice } from '../helpers';
 
 class Payment extends Component {
   state = {
@@ -23,18 +24,20 @@ class Payment extends Component {
   }
 
   render(){
-    const { activeIndex } = this.state
+    const { activeIndex } = this.state;
+    const deliveryPrice = this.props.orderTotal < 1200 ? 500 : 0;
+
     return(
       <div>
         <NavBar order={this.props.order} orderTotal={this.props.orderTotal}/>
         <Container id='payment-page'>
           <Header as='h1' id="page-header">Checkout</Header>
           <Grid stackable columns={2}>
-            <Grid.Column>
+            <Grid.Column width={11}>
               <Accordion styled>
                 <Accordion.Title active={activeIndex === 0} index={0} onClick={this.handleClick}>
                   <Icon name='dropdown' />
-                  <span id='payment-subheader-delivery'>Delivery</span>
+                  <span id='checkout-delivery'>Delivery</span>
                 </Accordion.Title>
                 <Accordion.Content active={activeIndex === 0}>
                   <CustomerDetailsForm
@@ -46,7 +49,7 @@ class Payment extends Component {
                 </Accordion.Content>
                 <Accordion.Title active={activeIndex === 1} index={1} onClick={this.handleClick}>
                   <Icon name='dropdown' />
-                  Payment
+                  <span id='checkout-payment'>Payment</span>
                 </Accordion.Title>
                 <Accordion.Content active={activeIndex === 1}>
                   <Elements>
@@ -58,9 +61,15 @@ class Payment extends Component {
               </Accordion>
             </Grid.Column>
 
-            <Grid.Column>
+            <Grid.Column width={5}>
               <Container id='checkout-sum-box'>
-                Total box
+                <Header as='h2'>Order Summary</Header>
+                <Container>
+                <p><span role='img' aria-label='pizza'>🍕</span> Pizzas: {formatPrice(this.props.orderTotal)}</p>
+                <p><span role='img' aria-label='pizza'>🛵 </span>Delivery: {formatPrice(deliveryPrice)}</p>
+                <Header as='h3'>Total: {formatPrice(this.props.checkoutTotal)}</Header>
+                <Button as={Link} to='/cart' size='mini'>Edit Order</Button>
+                </Container>
               </Container>
             </Grid.Column>
           </Grid>

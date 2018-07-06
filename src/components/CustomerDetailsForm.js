@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { Link  } from 'react-router-dom';
-import { Header, Container, Segment, Form, Button } from 'semantic-ui-react';
-import { formatPrice } from '../helpers';
+import { Container, Form, Button } from 'semantic-ui-react';
 
 class CustomerDetailsForm extends Component {
 
@@ -15,51 +13,58 @@ class CustomerDetailsForm extends Component {
 
   render(){
 
+    const { firstName, lastName, email, contactNum, address } = this.props.customerDetails;
+
+
     return (
-        <Container id="form-box">
-          <Form>
+        <Container id="customerForm-box">
+          <Form onSubmit={this.props.handleSave}>
             <Form.Group widths='equal'>
               <Form.Input
                 fluid
                 label='First name'
+                type='text'
                 placeholder='First name'
                 name='firstName'
-                value={this.props.firstName}
+                value={firstName}
                 onChange={this.handleChange}
                 required />
               <Form.Input
                 fluid
                 label='Last name'
+                type='text'
                 placeholder='Last name'
                 name='lastName'
-                value={this.props.lastName}
+                value={lastName}
                 onChange={this.handleChange}
                 required />
             </Form.Group>
 
             <Form.Input
               label='Email'
+              type='email'
               placeholder='Email'
               name='email'
-              value={this.props.email}
+              value={email}
               onChange={this.handleChange}
               required />
             <Form.Input
               label='Contact No.'
+              type='tel'
               placeholder='Contact No.'
               name='contactNum'
-              value={this.props.contactNum}
+              value={contactNum}
               onChange={this.handleChange}
               required />
             <Form.Input
               label='Address'
+              type='text'
               placeholder='Address'
               name='address'
-              value={this.props.address}
+              value={address}
               onChange={this.handleChange}
               required />
-            <Button type='submit' color='violet' onClick={this.props.handleSave}>Save</Button>
-
+            <Button type='submit' color='violet'>Save</Button>
           </Form>
         </Container>
     );

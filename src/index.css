@@ -3,21 +3,22 @@ body {
 }
 
 #home-page {
-  background: url(./assets/pizza-background.jpg) no-repeat center center fixed;
+  background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)),
+  url(./assets/pizza-background.jpg) no-repeat center center fixed;
   background-size: cover;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;
 }
 
 #home-logo {
   font-family: 'Pacifico', cursive;
   margin-left: 0.5em;
   margin-top: 0.5em;
-  font-size: 3em;
+  font-size: 3.5em;
+  color: #6435c9;
 }
 
 #home-content {
@@ -28,7 +29,11 @@ body {
 #home-header {
   font-size: 3em;
   margin-bottom: .8em;
-  color: #6335ca;
+  color: #fff;
+}
+
+#home-subheader {
+  color: #fff;
 }
 
 #navbar {
@@ -88,29 +93,18 @@ body {
 #checkout-sum-box {
   background: #6435c9;
   color: #fff;
-  height: 300px;
-
+  padding: 2em;
+  text-align: right;
+  font-size: 1.15em;
+  border-radius: 2%;
 }
 
-#checkout-save-btn {
-  margin: 1%;
-  margin-top: 2%;
+#checkout-delivery,
+#checkout-payment {
+  font-size: 1.2em;
 }
 
-#form-box {
+#customerForm-box {
   width: 98%;
   margin-top: 1em;
-}
-
-#form-confirm {
-  margin-top: 2em;
-}
-
-#payment-page {
-  margin-top: 4em;
-}
-
-
-#payment-form {
-  padding-bottom: 5%;
 }
