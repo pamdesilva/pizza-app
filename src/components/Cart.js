@@ -3,6 +3,7 @@ import { Link  } from 'react-router-dom';
 import { Grid, Image, Button, Segment, Container, Icon, Header } from 'semantic-ui-react';
 import { PizzaList } from '../data/pizzas';
 import { formatPrice } from '../helpers';
+import NavBar from './NavBar';
 import Order from './Order';
 
 class Cart extends Component {
@@ -25,21 +26,26 @@ class Cart extends Component {
     }
 
     return(
-        <Container>
-          <Header as='h1' id="page-header">Your Order</Header>
-          <Container id="order-box">
-            <Order
-              order={this.props.order}
-              removeFromOrder={this.props.removeFromOrder}
-            />
-            <Segment inverted color='violet' id="order-total">
-              <p><strong>Order:</strong>  {formatPrice(totalPizzaPrice)}</p>
-              <p><strong>Delivery:</strong>  {formatPrice(deliveryPrice)}</p>
-              <p><strong>Total:</strong>  {formatPrice(checkoutTotal)}</p>
-              <Button as={Link} to="/customer-details" size='large' onClick={() => this.props.updateCheckoutTotal(checkoutTotal)}>Confirm Order</Button>
-            </Segment>
-          </Container>
+      <div>
+      <NavBar order={this.props.order} orderTotal={this.props.orderTotal}/>
+      <Container>
+        <Header as='h1' id="page-header">Your Order</Header>
+        <Container id="order-box">
+          <Order
+            order={this.props.order}
+            removeFromOrder={this.props.removeFromOrder}
+          />
+        <Grid id="cart-total">
+          <Grid.Column floated='right'>
+            <p>Order: <strong>{formatPrice(totalPizzaPrice)}</strong></p>
+            <p>Delivery (free over £12): <strong>{formatPrice(deliveryPrice)}</strong></p>
+            <p>Total: <strong>{formatPrice(checkoutTotal)}</strong></p>
+            <Button as={Link} to="/customer-details" size='large' color='violet' onClick={() => this.props.updateCheckoutTotal(checkoutTotal)}>Checkout & Pay</Button>
+          </Grid.Column>
+          </Grid>
         </Container>
+      </Container>
+      </div>
     );
   }
 }
