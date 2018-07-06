@@ -85,8 +85,21 @@ body {
   margin-right: 0.1em;
 }
 
+#checkout-sum-box {
+  background: #6435c9;
+  color: #fff;
+  height: 300px;
+
+}
+
+#checkout-save-btn {
+  margin: 1%;
+  margin-top: 2%;
+}
+
 #form-box {
-  width: 70%;
+  width: 98%;
+  margin-top: 1em;
 }
 
 #form-confirm {
@@ -99,6 +112,5 @@ body {
 
 
 #payment-form {
-  margin-top: 4em;
-  padding-bottom: 20%;
+  padding-bottom: 5%;
 }

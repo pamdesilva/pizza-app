@@ -6,7 +6,7 @@ import { PizzaList } from '../data/pizzas';
 import Home from './Home';
 import CustomerDetailsForm from './CustomerDetailsForm';
 import Menu from './Menu';
-import Payment from './Payment';
+import Checkout from './Checkout';
 import Cart from './Cart';
 
 class App extends Component {
@@ -117,10 +117,12 @@ class App extends Component {
                 updateCustomerDetails={this.updateCustomerDetails} /> } />
             <Route exact path='/payment' render={ (props) =>
               <StripeProvider apiKey='pk_test_12345'>
-                <Payment {...props}
+                <Checkout {...props}
                   orderTotal={this.state.orderTotal}
                   order={this.state.order}
-                  customerDetails={this.state.customer} />
+                  customerDetails={this.state.customer}
+                  checkoutTotal={this.state.checkoutTotal}
+                  updateCustomerDetails={this.updateCustomerDetails} />
               </StripeProvider> } />
             </Switch>
           </Fragment>

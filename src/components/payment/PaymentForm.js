@@ -29,7 +29,7 @@ class PaymentForm extends Component {
             required />
         </Form.Group>
         <CardSection />
-        <Button floated='right' color='violet' size='large'>Confirm order</Button>
+        <Button color='violet'>Pay</Button>
       </Form>
     );
   }

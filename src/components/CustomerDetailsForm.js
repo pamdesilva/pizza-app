@@ -16,8 +16,6 @@ class CustomerDetailsForm extends Component {
   render(){
 
     return (
-      <Container>
-        <Header as='h1' id="page-header">Your Details</Header>
         <Container id="form-box">
           <Form>
             <Form.Group widths='equal'>
@@ -60,15 +58,10 @@ class CustomerDetailsForm extends Component {
               value={this.props.address}
               onChange={this.handleChange}
               required />
-
-            <Segment vertical textAlign='right' id="form-confirm" size='large'>
-            <Header as='h2'>Total: {formatPrice(this.props.checkoutTotal)} </Header>
-            <Button as={Link} to="/payment" color='violet' size='large'>Go to Payment</Button>
-            </Segment>
+            <Button type='submit' color='violet' onClick={this.props.handleSave}>Save</Button>
 
           </Form>
         </Container>
-      </Container>
     );
   }
 
