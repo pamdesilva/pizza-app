@@ -16,8 +16,8 @@ class Cart extends Component {
     if (this.props.orderTotal === 0) {
       return (
         <div>
-          <Header as='h1' id="page-header">Your Order</Header>
-          <div className="order-box">
+          <Header as='h1' id='page-header'>Your Order</Header>
+          <div className='order-box'>
             <h4>Your cart is empty. Add some pizzas.</h4>
           </div>
         </div>
@@ -28,22 +28,22 @@ class Cart extends Component {
       <div>
       <NavBar order={this.props.order} orderTotal={this.props.orderTotal}/>
       <Container>
-        <Header as='h1' id="page-header">Your Order</Header>
-        <Container id="order-box">
+        <Header as='h1' id='page-header'>Your Order</Header>
+        <Container id='order-box'>
           <Order
             order={this.props.order}
             removeFromOrder={this.props.removeFromOrder}
           />
-        <Grid id="cart-total">
-          <Grid.Column floated='right'>
-            <p>Order: <strong>{formatPrice(totalPizzaPrice)}</strong></p>
-            <p>Delivery (free over £12): <strong>{formatPrice(deliveryPrice)}</strong></p>
-            <p>Total: <strong>{formatPrice(checkoutTotal)}</strong></p>
-            <Button as={Link} to="/checkout" size='large' color='violet' onClick={() => this.props.updateCheckoutTotal(checkoutTotal)}>Checkout & Pay</Button>
-          </Grid.Column>
-          </Grid>
         </Container>
       </Container>
+      <Grid id='cart-total'>
+        <Grid.Column floated='right' id='cart-total-content'>
+          <p>Order: <strong>{formatPrice(totalPizzaPrice)}</strong></p>
+          <p>Delivery (free over £12): <strong>{formatPrice(deliveryPrice)}</strong></p>
+          <p>Total: <strong>{formatPrice(checkoutTotal)}</strong></p>
+          <Button as={Link} to='/checkout' size='large' color='violet' onClick={() => this.props.updateCheckoutTotal(checkoutTotal)}>Checkout & Pay</Button>
+        </Grid.Column>
+        </Grid>
       </div>
     );
   }

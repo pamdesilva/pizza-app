@@ -7,8 +7,8 @@ class Pizza extends Component {
     const {name, toppings, image, price } = this.props.details;
     return(
       <Grid.Column>
-        <Segment>
-          <Image id="menu-pizza-img" src={image} />
+        <Segment id='pizza-card'>
+          <Image id='menu-pizza-img' src={image} />
           <Header as='h3'>{name}</Header>
           <p>{formatToppings(toppings)}</p>
           <Header as='h4'>{formatPrice(price)}</Header>

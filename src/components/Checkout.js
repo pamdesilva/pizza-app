@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link  } from 'react-router-dom';
-import { Grid, Container, Header, Accordion, Icon, Button } from 'semantic-ui-react';
+import { Segment, Grid, Container, Header, Accordion, Icon, Button } from 'semantic-ui-react';
 import {Elements} from 'react-stripe-elements';
 import NavBar from './NavBar';
 import PaymentForm from './payment/PaymentForm';
@@ -62,15 +62,15 @@ class Payment extends Component {
             </Grid.Column>
 
             <Grid.Column width={5}>
-              <Container id='checkout-sum-box'>
-                <Header as='h2'>Order Summary</Header>
+              <Segment id='checkout-sum-box' raised>
+                <Header as='h2' color='teal'>Order Summary</Header>
                 <Container>
                 <p><span role='img' aria-label='pizza'>🍕</span> Pizzas: {formatPrice(this.props.orderTotal)}</p>
                 <p><span role='img' aria-label='pizza'>🛵 </span>Delivery: {formatPrice(deliveryPrice)}</p>
-                <Header as='h3'>Total: {formatPrice(this.props.checkoutTotal)}</Header>
-                <Button as={Link} to='/cart' size='mini'>Edit Order</Button>
+                <Header as='h3' color='teal'>Total: {formatPrice(this.props.checkoutTotal)}</Header>
+                <Button as={Link} to='/cart' size='mini' color='teal'>Edit Order</Button>
                 </Container>
-              </Container>
+              </Segment>
             </Grid.Column>
           </Grid>
 

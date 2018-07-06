@@ -38,6 +38,7 @@ body {
 
 #navbar {
   margin-bottom: 0;
+  background: #e9e9e9;
 }
 
 #navbar-header {
@@ -46,12 +47,9 @@ body {
   color: #6435c9;
 }
 
-#navbar-menu {
-  font-size: 1.05em;
-}
-
+#navbar-menu,
 #navbar-total {
-  font-size: 1.05em;
+  font-size: 1.1em;
 }
 
 #page-header {
@@ -68,10 +66,14 @@ body {
 #menu-total {
   font-size: 1.2em;
   margin-top: 2em;
+  background: #e9e9e9;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 #menu-checkout-btn {
   margin-left: 2em;
+  margin-right: 4em;
 }
 
 #order-box {
@@ -88,6 +90,13 @@ body {
   font-size: 1.15em;
   margin-top: 2em;
   margin-right: 0.1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background: #e9e9e9;
+}
+
+#cart-total-content {
+  margin-right: 3em;
 }
 
 #checkout-sum-box {
@@ -95,7 +104,7 @@ body {
   color: #fff;
   padding: 2em;
   text-align: right;
-  font-size: 1.15em;
+  font-size: 1.1em;
   border-radius: 2%;
 }
 
