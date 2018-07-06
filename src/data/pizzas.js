@@ -37,7 +37,7 @@ export const PizzaList = {
   },
   pizza7: {
     name: 'Ham Solo',
-    toppings: ['parmegianno', 'ham', 'prosciutto', 'white button mushrooms', 'black olives', 'caramelised onions', 'basil', 'extra virgin olive oil',],
+    toppings: ['parmegianno', 'ham', 'button mushrooms', 'olives', 'onions', 'basil', 'extra virgin olive oil',],
     image: "https://realfood.tesco.com/media/images/179295-HERO-f8e074ae-f499-4d4c-af4d-b42d23e96450-0-472x310.jpg",
     price: 1395
   },

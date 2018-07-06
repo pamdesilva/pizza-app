@@ -59,8 +59,19 @@ body {
   color: #424851;
 }
 
+#pizza-card {
+  height: 30em;
+  position: relative;
+}
+
 #menu-pizza-img {
   height: 180px;
+}
+
+#pizza-order-info {
+  position: absolute;
+  bottom: 1em;
+  left: 1.2em;
 }
 
 #menu-total {
@@ -83,6 +94,16 @@ body {
 #order-delete {
   cursor: pointer;
   margin-left: 1em;
+}
+
+#cart-page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column
+}
+
+#cart-page-content {
+  flex: 1;
 }
 
 #cart-total {
