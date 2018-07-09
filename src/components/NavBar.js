@@ -14,6 +14,7 @@ const NavBar = (props) => (
       <Menu.Item as={Link} to='/cart' id='navbar-total'>
         <Icon name='cart' color='violet' />
         <strong>{formatPrice(props.orderTotal)}</strong>
+        [checkout]
       </Menu.Item>
     </Menu.Menu>
   </Menu>

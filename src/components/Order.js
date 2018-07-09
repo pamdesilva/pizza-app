@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Image, Segment, Icon } from 'semantic-ui-react';
+import { Grid, Image, Segment, Icon, Header } from 'semantic-ui-react';
 import { PizzaList } from '../data/pizzas';
 import { formatPrice } from '../helpers';
 
@@ -17,9 +17,12 @@ class Order extends Component {
               <Image src={pizza.image} />
             </Grid.Column>
             <Grid.Column width={12}>
-              <p><strong>{pizza.name}</strong><Icon name='delete' circular id="order-delete" onClick={() => this.props.removeFromOrder(key)} /></p>
-              <p>Quantity: {count}</p>
-              <p>Price per pizza: {formatPrice(pizza.price)}</p>
+              <p id='order-pizza-name'>{pizza.name}</p>
+              <p><strong>{formatPrice(pizza.price)}</strong></p>
+              <p>
+                <Icon name='minus' circular id="order-minus" onClick={() => this.props.removeFromOrder(key)} /> Quantity: {count}
+                <Icon name='plus' circular id="order-plus" onClick={() => this.props.addToOrder(key)} />
+              </p>
             </Grid.Column>
           </Grid.Row>
         </Grid>

@@ -16,10 +16,12 @@ class Cart extends Component {
     if (this.props.orderTotal === 0) {
       return (
         <div>
+          <NavBar order={this.props.order} orderTotal={this.props.orderTotal}/>
           <Header as='h1' id='page-header'>Your Order</Header>
-          <div className='order-box'>
-            <h4>Your cart is empty. Add some pizzas.</h4>
-          </div>
+          <Container id='cart-empty-box'>
+            <Header as='h3'>Your cart is empty. Add some pizzas 🍕🍕🍕</Header>
+            <Button as={Link} to='/menu' color='violet' size='large'>Menu</Button>
+          </Container>
         </div>
       )
     }
@@ -31,6 +33,7 @@ class Cart extends Component {
           <Container id='order-box'>
             <Order
               order={this.props.order}
+              addToOrder={this.props.addToOrder}
               removeFromOrder={this.props.removeFromOrder}
             />
             <Container id='cart-total'>

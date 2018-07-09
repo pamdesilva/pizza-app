@@ -60,8 +60,15 @@ class App extends Component {
 
   removeFromOrder = (key) => {
     const order = { ...this.state.order};
-    const newTotal = this.state.orderTotal - (PizzaList[key].price * order[key]);
-    delete order[key];
+    order[key] = order[key] - 1;
+    let newTotal = this.state.orderTotal - (PizzaList[key].price);
+
+    if(order[key] == 0) {
+      newTotal = this.state.orderTotal - PizzaList[key].price;
+      delete order[key];
+    }
+
+    console.log(newTotal);
 
     this.setState({
       order: order,
@@ -106,6 +113,7 @@ class App extends Component {
             <Route exact path='/cart' render={ (props) =>
               <Cart {...props}
                 orderTotal={this.state.orderTotal}
+                addToOrder={this.addToOrder}
                 removeFromOrder={this.removeFromOrder}
                 order={this.state.order}
                 updateCheckoutTotal={this.updateCheckoutTotal} /> } />
