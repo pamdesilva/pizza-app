@@ -8,13 +8,13 @@ import PizzaContainer from './PizzaContainer';
 const Menu = (props) => (
   <div>
     <NavBar order={props.order} orderTotal={props.orderTotal}/>
+    <Header as='h1' id='page-header'>Pick Your Pizzas</Header>
     <Container>
-      <Header as='h1' id='page-header'>Pick Your Pizzas</Header>
       <PizzaContainer addToOrder={props.addToOrder} />
-    </Container>
-    <Container id='menu-total' textAlign='right' fluid>
+      <Container id='menu-total'>
         <strong id='menu-total'>Total: {formatPrice(props.orderTotal)}</strong>
         <Button as={Link} to='/cart' id='menu-checkout-btn' color='violet' size='large'>Go to Cart</Button>
+      </Container>
     </Container>
   </div>
 );

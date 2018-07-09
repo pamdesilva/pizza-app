@@ -1,9 +1,10 @@
 body {
   color: #424851;
+  font-family: 'Quicksand', sans-serif;
 }
 
 #home-page {
-  background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)),
+  background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
   url(./assets/pizza-background.jpg) no-repeat center center fixed;
   background-size: cover;
   position: fixed;
@@ -14,11 +15,10 @@ body {
 }
 
 #home-logo {
-  font-family: 'Pacifico', cursive;
-  margin-left: 0.5em;
+  font-family: 'Bangers', cursive;
   margin-top: 0.5em;
-  font-size: 3.5em;
-  color: #6435c9;
+  font-size: 4em;
+  color: #FFF;
 }
 
 #home-content {
@@ -27,36 +27,33 @@ body {
 }
 
 #home-header {
+  font-family: 'Quicksand', sans-serif;
   font-size: 3em;
-  margin-bottom: .8em;
+  margin-bottom: .3em;
   color: #fff;
-}
-
-#home-subheader {
-  color: #fff;
-}
-
-#navbar {
-  margin-bottom: 0;
-  background: #e9e9e9;
 }
 
 #navbar-header {
-  font-family: 'Pacifico', cursive;
-  font-size: 3em;
+  font-family: 'Bangers', cursive;
+  font-size: 4em;
   color: #6435c9;
+  margin-left: -30px;
 }
 
 #navbar-menu,
 #navbar-total {
-  font-size: 1.1em;
+  font-size: 1.2em;
+  font-family: 'Quicksand', sans-serif;
+  color: #6435c9;
 }
 
 #page-header {
   text-align: center;
-  margin-bottom: 2em;
-  margin-top: 2em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  font-family: 'Bangers', cursive;
   color: #424851;
+  font-size: 3em;
 }
 
 #pizza-card {
@@ -77,14 +74,13 @@ body {
 #menu-total {
   font-size: 1.2em;
   margin-top: 2em;
-  background: #e9e9e9;
   padding-top: 1em;
   padding-bottom: 1em;
+  text-align: right;
 }
 
 #menu-checkout-btn {
-  margin-left: 2em;
-  margin-right: 4em;
+  margin-left: 1em;
 }
 
 #order-box {
@@ -96,16 +92,6 @@ body {
   margin-left: 1em;
 }
 
-#cart-page {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column
-}
-
-#cart-page-content {
-  flex: 1;
-}
-
 #cart-total {
   text-align: right;
   font-size: 1.15em;
@@ -113,20 +99,22 @@ body {
   margin-right: 0.1em;
   padding-top: 1em;
   padding-bottom: 1em;
-  background: #e9e9e9;
 }
 
-#cart-total-content {
-  margin-right: 3em;
+#cart-checkout-btn {
+  margin-right: 0;
 }
 
 #checkout-sum-box {
-  background: #6435c9;
-  color: #fff;
+  background: #e9e9e9;
   padding: 2em;
-  text-align: right;
   font-size: 1.1em;
   border-radius: 2%;
+}
+
+#checkout-sum-total {
+  font-family: 'Bangers', cursive;
+  font-size: 2em;
 }
 
 #checkout-delivery,

@@ -39,17 +39,16 @@ class Home extends Component {
 
     return(
         <div id='home-page'>
-          <Header as='h1' id="home-logo">Slices</Header>
-          <Container id="home-content">
-            <Container>
-              <Header id="home-header">The best pizzas in town!</Header>
-              <Header as='h2' id='home-subheader'>Find out if we deliver to your hood</Header>
-              <Form size='large' onSubmit={this.handlePostcodeSubmit}>
+          <Container >
+            <Header as='h1' id="home-logo">Slices</Header>
+            <Container id="home-content">
+              <Header as='h1' id="home-header">The best pizzas delivered to your doorstep!</Header>
+              <Form size='large' onSubmit={this.handlePostcodeSubmit} fluid>
                 <Form.Group >
-                  <Form.Input placeholder='Enter your postcode' name='postcode' onChange={this.handleChange} value={this.state.postcode} width={6} id='home-postcode-input' required />
-                  <Form.Button type='submit' color='violet' id='home-postcode-btn' size='large' width={10}>Check</Form.Button>
+                  <Form.Input placeholder='Enter your postcode' name='postcode' onChange={this.handleChange} value={this.state.postcode} width={4} id='home-postcode-input' required soze='large' />
+                  <Form.Button type='submit' color='violet' size='large' width={4}>Get Started!</Form.Button>
                 </Form.Group>
-                <Label color='teal' size='medium'><span role='img' aria-label='point-right'>👉</span> We only deliver to postcode 'BBB' right now</Label>
+                <Label color='yellow' size='medium'><span role='img' aria-label='point-right'>👉</span> Hint: We only deliver to postcode 'BBB' right now</Label>
               </Form>
             </Container>
           </Container>

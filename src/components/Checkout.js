@@ -33,8 +33,21 @@ class Payment extends Component {
         <Container id='payment-page'>
           <Header as='h1' id="page-header">Checkout</Header>
           <Grid stackable columns={2}>
-            <Grid.Column width={11}>
-              <Accordion styled>
+
+            <Grid.Column width={4}>
+              <Segment id='checkout-sum-box' raised>
+                <Header as='h2' color='violet' id='checkout-sum-total'>Order Summary</Header>
+                <Container>
+                <p><span role='img' aria-label='pizza'>🍕</span> Pizzas: {formatPrice(this.props.orderTotal)}</p>
+                <p><span role='img' aria-label='pizza'>🛵 </span>Delivery: {formatPrice(deliveryPrice)}</p>
+                <Header as='h3' color='violet'>Total: {formatPrice(this.props.checkoutTotal)}</Header>
+                <Button as={Link} to='/cart' size='mini' color='violet'>Edit Order</Button>
+                </Container>
+              </Segment>
+            </Grid.Column>
+
+            <Grid.Column width={12}>
+              <Accordion styled fluid>
                 <Accordion.Title active={activeIndex === 0} index={0} onClick={this.handleClick}>
                   <Icon name='dropdown' />
                   <span id='checkout-delivery'>Delivery</span>
@@ -61,17 +74,6 @@ class Payment extends Component {
               </Accordion>
             </Grid.Column>
 
-            <Grid.Column width={5}>
-              <Segment id='checkout-sum-box' raised>
-                <Header as='h2' color='teal'>Order Summary</Header>
-                <Container>
-                <p><span role='img' aria-label='pizza'>🍕</span> Pizzas: {formatPrice(this.props.orderTotal)}</p>
-                <p><span role='img' aria-label='pizza'>🛵 </span>Delivery: {formatPrice(deliveryPrice)}</p>
-                <Header as='h3' color='teal'>Total: {formatPrice(this.props.checkoutTotal)}</Header>
-                <Button as={Link} to='/cart' size='mini' color='teal'>Edit Order</Button>
-                </Container>
-              </Segment>
-            </Grid.Column>
           </Grid>
 
         </Container>

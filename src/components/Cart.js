@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link  } from 'react-router-dom';
-import { Grid, Button, Container, Header } from 'semantic-ui-react';
+import { Grid, Button, Container, Header, Segment } from 'semantic-ui-react';
 import { formatPrice } from '../helpers';
 import NavBar from './NavBar';
 import Order from './Order';
@@ -25,25 +25,21 @@ class Cart extends Component {
     }
 
     return(
-      <div id='cart-page'>
+      <div>
         <NavBar order={this.props.order} orderTotal={this.props.orderTotal}/>
-        <Container id='cart-page-content'>
           <Header as='h1' id='page-header'>Your Order</Header>
           <Container id='order-box'>
             <Order
               order={this.props.order}
               removeFromOrder={this.props.removeFromOrder}
             />
+            <Container id='cart-total'>
+                <p>Order: <strong>{formatPrice(totalPizzaPrice)}</strong></p>
+                <p>Delivery (free over £12): <strong>{formatPrice(deliveryPrice)}</strong></p>
+                <p>Total: <strong>{formatPrice(checkoutTotal)}</strong></p>
+                <Button as={Link} to='/checkout' id='cart-checkout-btn' size='large' color='violet' onClick={() => this.props.updateCheckoutTotal(checkoutTotal)}>Checkout & Pay</Button>
+            </Container>
           </Container>
-        </Container>
-        <Grid id='cart-total'>
-          <Grid.Column floated='right' id='cart-total-content'>
-            <p>Order: <strong>{formatPrice(totalPizzaPrice)}</strong></p>
-            <p>Delivery (free over £12): <strong>{formatPrice(deliveryPrice)}</strong></p>
-            <p>Total: <strong>{formatPrice(checkoutTotal)}</strong></p>
-            <Button as={Link} to='/checkout' size='large' color='violet' onClick={() => this.props.updateCheckoutTotal(checkoutTotal)}>Checkout & Pay</Button>
-          </Grid.Column>
-        </Grid>
       </div>
     );
   }
