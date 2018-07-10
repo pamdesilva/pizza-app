@@ -16,6 +16,7 @@ class Payment extends Component {
               customerDetails={this.props.customerDetails}
               checkoutTotal={this.props.checkoutTotal}
               updateCustomerDetails={this.props.updateCustomerDetails}
+              loadSampleCustomer={this.props.loadSampleCustomer}
             />
         </Container>
       </div>

@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import {StripeProvider} from 'react-stripe-elements';
 import { PizzaList } from '../data/pizzas';
+import { sampleCustomer } from '../data/sampleCustomer';
 
 import Home from './Home';
 import Menu from './Menu';
@@ -97,6 +98,10 @@ class App extends Component {
     });
   }
 
+  loadSampleCustomer = () => {
+    this.setState({ customer: sampleCustomer })
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -123,7 +128,8 @@ class App extends Component {
                 orderTotal={this.state.orderTotal}
                 customerDetails={this.state.customer}
                 checkoutTotal={this.state.checkoutTotal}
-                updateCustomerDetails={this.updateCustomerDetails} /> }
+                updateCustomerDetails={this.updateCustomerDetails}
+                loadSampleCustomer={this.loadSampleCustomer} /> }
             />
             <Route exact path='/payment' render={ (props) =>
               <StripeProvider apiKey='pk_test_12345'>

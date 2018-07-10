@@ -15,17 +15,17 @@ class PaymentForm extends Component {
     return (
       <Form onSubmit={this.handleSubmit}>
         <Segment>
+          <p><strong>Cardholder's Name</strong></p>
           <Form.Input
             fluid
-            label='Name'
             placeholder='Name'
             required />
-          <label>Card details</label>
+          <p><strong>Card Details</strong></p>
           <Segment>
             <CardElement style={{base: {fontSize: '12px'}}} />
           </Segment>
         </Segment>
-        <Button type='submit' color='violet' floated='right'>Place Order & Pay</Button>
+        <Button type='submit' color='violet' floated='right' size='large'>Place Order & Pay</Button>
       </Form>
     );
   }

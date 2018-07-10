@@ -29,6 +29,7 @@ class CheckoutForm extends Component {
     }
 
     return (
+      <div>
       <Form onSubmit={this.handleSubmit}>
       <Segment>
           <Form.Group widths='equal'>
@@ -79,6 +80,8 @@ class CheckoutForm extends Component {
           </Segment>
           <Button type='submit' color='violet' floated='right' size='large'>Go to Payment</Button>
         </Form>
+        <Button size='tiny' onClick={this.props.loadSampleCustomer}>Populate with sample info 👀 </Button>
+        </div>
 
     );
   }
