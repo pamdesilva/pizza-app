@@ -7,6 +7,7 @@ import Home from './Home';
 import Menu from './Menu';
 import Cart from './Cart';
 import Checkout from './Checkout';
+import Payment from './Payment';
 
 class App extends Component {
 
@@ -117,15 +118,21 @@ class App extends Component {
                 removeFromOrder={this.removeFromOrder}
                 order={this.state.order}
                 updateCheckoutTotal={this.updateCheckoutTotal} /> } />
-              <Route exact path='/checkout' render={ (props) =>
+            <Route exact path='/checkout' render={ (props) =>
+              <Checkout {...props}
+                orderTotal={this.state.orderTotal}
+                customerDetails={this.state.customer}
+                checkoutTotal={this.state.checkoutTotal}
+                updateCustomerDetails={this.updateCustomerDetails} /> }
+            />
+            <Route exact path='/payment' render={ (props) =>
               <StripeProvider apiKey='pk_test_12345'>
-                <Checkout {...props}
+                <Payment {...props}
                   orderTotal={this.state.orderTotal}
-                  order={this.state.order}
                   customerDetails={this.state.customer}
-                  checkoutTotal={this.state.checkoutTotal}
-                  updateCustomerDetails={this.updateCustomerDetails} />
-              </StripeProvider> } />
+                  checkoutTotal={this.state.checkoutTotal} />
+              </StripeProvider> }
+            />
             </Switch>
           </Fragment>
         </BrowserRouter>

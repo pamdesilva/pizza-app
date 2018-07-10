@@ -1,20 +1,17 @@
 import React from 'react';
 import { Link  } from 'react-router-dom';
-import { Grid, Header, Container, Button } from 'semantic-ui-react';
-import { formatPrice } from '../helpers';
+import { Header, Container, Button } from 'semantic-ui-react';
 import NavBar from './NavBar';
 import PizzaContainer from './PizzaContainer';
 
 const Menu = (props) => (
   <div>
-    <NavBar order={props.order} orderTotal={props.orderTotal}/>
+    <NavBar order={props.order} orderTotal={props.orderTotal}>
+      {props.orderTotal > 0 && <Button as={Link} to='/cart' color='violet' id='menu-checkout-btn'>Checkout</Button>}
+    </NavBar>
     <Header as='h1' id='page-header'>Pick Your Pizzas</Header>
     <Container>
       <PizzaContainer addToOrder={props.addToOrder} />
-      <Container id='menu-total'>
-        <strong id='menu-total'>Total: {formatPrice(props.orderTotal)}</strong>
-        <Button as={Link} to='/cart' id='menu-checkout-btn' color='violet' size='large'>Go to Cart</Button>
-      </Container>
     </Container>
   </div>
 );
