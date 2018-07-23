@@ -103,6 +103,22 @@ class App extends Component {
     this.setState({ customer: sampleCustomer })
   }
 
+  clearState = () => {
+    this.setState({
+      order: [],
+      orderTotal: 0,
+      checkoutTotal: 0,
+      postcode:'',
+      customer: {
+        firstName: '',
+        lastName: '',
+        email: '',
+        contactNum: '',
+        address: '',
+    }
+  });
+}
+
   render() {
     return (
       <BrowserRouter>
@@ -125,23 +141,31 @@ class App extends Component {
                 order={this.state.order}
                 updateCheckoutTotal={this.updateCheckoutTotal} /> } />
             <Route exact path='/checkout' render={ (props) =>
-                <StripeProvider apiKey='pk_test_12345'>
-                  <Checkout {...props}
-                    orderTotal={this.state.orderTotal}
-                    customerDetails={this.state.customer}
-                    checkoutTotal={this.state.checkoutTotal}
-                    updateCustomerDetails={this.updateCustomerDetails}
-                    loadSampleCustomer={this.loadSampleCustomer} />
-                </StripeProvider> }
-            />
-            <Route exact path='/payment' render={ (props) =>
-                <Payment {...props}
+              <StripeProvider apiKey='pk_test_12345'>
+                <Checkout {...props}
                   orderTotal={this.state.orderTotal}
                   customerDetails={this.state.customer}
-                  checkoutTotal={this.state.checkoutTotal} />
+                  checkoutTotal={this.state.checkoutTotal}
+                  updateCustomerDetails={this.updateCustomerDetails}
+                  loadSampleCustomer={this.loadSampleCustomer} />
+              </StripeProvider> }
+            />
+            <Route exact path='/payment' render={ (props) =>
+              <Payment {...props}
+                orderTotal={this.state.orderTotal}
+                customerDetails={this.state.customer}
+                checkoutTotal={this.state.checkoutTotal} />
                }
             />
-            <Route exact path='/confirmation' component={Confirmation} />
+          <Route exact path='/confirmed' render={ (props) =>
+              <Confirmation {...props}
+                orderTotal={this.state.orderTotal}
+                customerDetails={this.state.customer}
+                checkoutTotal={this.state.checkoutTotal}
+                clearState={this.clearState}
+                />
+              }
+          />
             </Switch>
           </Fragment>
         </BrowserRouter>

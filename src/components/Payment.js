@@ -31,12 +31,6 @@ class Payment extends Component {
               </Segment>
             </Grid.Column>
 
-            <Grid.Column width={12}>
-              <Elements>
-                <PaymentForm />
-              </Elements>
-            </Grid.Column>
-
           </Grid>
         </Container>
       </div>

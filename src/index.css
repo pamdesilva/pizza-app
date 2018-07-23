@@ -139,9 +139,8 @@ body {
   margin-bottom: 1em;
 }
 
-
-#checkout-fill-btn {
-  margin-bottom: 1em;
+#checkout-btn {
+  width: 100%;
 }
 
 #checkout-sum-box {
@@ -174,7 +173,6 @@ body {
 }
 
 input,
-Form,
 .StripeElement {
   display: block;
   margin: 10px 0 20px 0;
@@ -189,6 +187,15 @@ Form,
   background: white;
 }
 
-Form.Input {
+#checkout-customer-form {
   font-family: 'Quicksand', sans-serif;
+}
+
+#confirmed-img {
+  border-radius: 55%;
+  box-shadow: -2px 6px 28px 0px rgba(196,196,196,1);
+}
+
+#confirmed-new-btn {
+  margin-top: 3em;
 }

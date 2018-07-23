@@ -33,8 +33,6 @@ class Payment extends Component {
           </Grid>
         </Container>
       </div>
-
-
     )
   }
 }

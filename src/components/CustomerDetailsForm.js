@@ -17,27 +17,29 @@ class CustomerDetailsForm extends Component {
     const { firstName, lastName, email, contactNum, address } = this.props.customerDetails;
 
     return (
-      <Form>
-         <Button id='checkout-fill-btn' color='black' size='tiny' onClick={this.props.loadSampleCustomer}>Fill with fake customer 🧔🏻‍</Button>
-        <Form.Group widths='equal'>
-          <Form.Input
-            fluid
-            label='First name'
-            type='text'
-            placeholder='First name'
-            name='firstName'
-            value={firstName}
-            onChange={this.handleChange}
-            required />
-          <Form.Input
-            fluid
-            label='Last name'
-            type='text'
-            placeholder='Last name'
-            name='lastName'
-            value={lastName}
-            onChange={this.handleChange}
-            required />
+    <div>
+      <Button size='tiny' color='teal' onClick={this.props.loadSampleCustomer}>🧔🏻‍ Fill with fake customer</Button>
+      <Segment>
+        <Form id='checkout-customer-form'>
+          <Form.Group widths='equal'>
+            <Form.Input
+              fluid
+              label='First name'
+              type='text'
+              placeholder='First name'
+              name='firstName'
+              value={firstName}
+              onChange={this.handleChange}
+              required />
+            <Form.Input
+              fluid
+              label='Last name'
+              type='text'
+              placeholder='Last name'
+              name='lastName'
+              value={lastName}
+              onChange={this.handleChange}
+              required />
           </Form.Group>
 
           <Form.Input
@@ -64,7 +66,9 @@ class CustomerDetailsForm extends Component {
             value={address}
             onChange={this.handleChange}
             required />
-      </Form>
+        </Form>
+      </Segment>
+    </div>
     );
   }
 }
