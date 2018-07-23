@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { Form, Button, Segment } from 'semantic-ui-react';
 
-class CheckoutForm extends Component {
-
-  state = {
-    toPayment: false
-  }
+class CustomerDetailsForm extends Component {
 
   handleChange = (e) => {
     const updateCustomer = {
@@ -16,41 +12,32 @@ class CheckoutForm extends Component {
     this.props.updateCustomerDetails(updateCustomer);
   }
 
-  handleSubmit = () => {
-    this.setState({ toPayment: true });
-  }
-
   render(){
 
     const { firstName, lastName, email, contactNum, address } = this.props.customerDetails;
 
-    if (this.state.toPayment === true) {
-      return <Redirect to='/payment' />
-    }
-
     return (
-      <div>
-      <Form onSubmit={this.handleSubmit}>
-      <Segment>
-          <Form.Group widths='equal'>
-            <Form.Input
-              fluid
-              label='First name'
-              type='text'
-              placeholder='First name'
-              name='firstName'
-              value={firstName}
-              onChange={this.handleChange}
-              required />
-            <Form.Input
-              fluid
-              label='Last name'
-              type='text'
-              placeholder='Last name'
-              name='lastName'
-              value={lastName}
-              onChange={this.handleChange}
-              required />
+      <Form>
+         <Button id='checkout-fill-btn' color='black' size='tiny' onClick={this.props.loadSampleCustomer}>Fill with fake customer 🧔🏻‍</Button>
+        <Form.Group widths='equal'>
+          <Form.Input
+            fluid
+            label='First name'
+            type='text'
+            placeholder='First name'
+            name='firstName'
+            value={firstName}
+            onChange={this.handleChange}
+            required />
+          <Form.Input
+            fluid
+            label='Last name'
+            type='text'
+            placeholder='Last name'
+            name='lastName'
+            value={lastName}
+            onChange={this.handleChange}
+            required />
           </Form.Group>
 
           <Form.Input
@@ -77,14 +64,9 @@ class CheckoutForm extends Component {
             value={address}
             onChange={this.handleChange}
             required />
-          </Segment>
-          <Button type='submit' color='violet' floated='right' size='large'>Go to Payment</Button>
-        </Form>
-        <Button size='tiny' onClick={this.props.loadSampleCustomer}>Populate with sample info 👀 </Button>
-        </div>
-
+      </Form>
     );
   }
 }
 
-export default CheckoutForm;
+export default CustomerDetailsForm;

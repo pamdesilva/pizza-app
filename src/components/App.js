@@ -9,6 +9,7 @@ import Menu from './Menu';
 import Cart from './Cart';
 import Checkout from './Checkout';
 import Payment from './Payment';
+import Confirmation from './Confirmation';
 
 class App extends Component {
 
@@ -124,21 +125,23 @@ class App extends Component {
                 order={this.state.order}
                 updateCheckoutTotal={this.updateCheckoutTotal} /> } />
             <Route exact path='/checkout' render={ (props) =>
-              <Checkout {...props}
-                orderTotal={this.state.orderTotal}
-                customerDetails={this.state.customer}
-                checkoutTotal={this.state.checkoutTotal}
-                updateCustomerDetails={this.updateCustomerDetails}
-                loadSampleCustomer={this.loadSampleCustomer} /> }
+                <StripeProvider apiKey='pk_test_12345'>
+                  <Checkout {...props}
+                    orderTotal={this.state.orderTotal}
+                    customerDetails={this.state.customer}
+                    checkoutTotal={this.state.checkoutTotal}
+                    updateCustomerDetails={this.updateCustomerDetails}
+                    loadSampleCustomer={this.loadSampleCustomer} />
+                </StripeProvider> }
             />
             <Route exact path='/payment' render={ (props) =>
-              <StripeProvider apiKey='pk_test_12345'>
                 <Payment {...props}
                   orderTotal={this.state.orderTotal}
                   customerDetails={this.state.customer}
                   checkoutTotal={this.state.checkoutTotal} />
-              </StripeProvider> }
+               }
             />
+            <Route exact path='/confirmation' component={Confirmation} />
             </Switch>
           </Fragment>
         </BrowserRouter>

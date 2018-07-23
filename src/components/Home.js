@@ -43,7 +43,7 @@ class Home extends Component {
             <Header as='h1' id="home-logo">Slices</Header>
             <Container id="home-content">
               <Header as='h1' id="home-header">Delicious pizzas delivered to your doorstep</Header>
-              <Form size='large' onSubmit={this.handlePostcodeSubmit} fluid>
+              <Form size='large' onSubmit={this.handlePostcodeSubmit} fluid='true'>
                 <Form.Group >
                   <Form.Input placeholder='Enter your postcode' name='postcode' onChange={this.handleChange} value={this.state.postcode} width={4} id='home-postcode-input' required soze='large' />
                   <Form.Button type='submit' color='violet' size='large' width={4}>Get Started</Form.Button>
