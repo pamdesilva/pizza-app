@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { Link  } from 'react-router-dom';
-import { Elements } from 'react-stripe-elements';
 import { Segment, Grid, Container, Header, Button } from 'semantic-ui-react';
 
 import NavBar from './NavBar';
-import PaymentForm from './PaymentForm';
 import { formatPrice } from '../helpers';
 
 class Payment extends Component {

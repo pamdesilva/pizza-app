@@ -31,7 +31,7 @@ class Cart extends Component {
         <NavBar order={this.props.order} orderTotal={this.props.orderTotal}/>
           <Container id='cart-header'>
             <Button as={Link} to='/menu' color='teal' size='large' id='cart-menu-btn'>Back to Menu</Button>
-            <Header as='h1' id='page-header'>Your Order</Header>
+            <Header as='h1' id='page-header'>Your Cart</Header>
           </Container>
           <Container id='order-box'>
             <Order

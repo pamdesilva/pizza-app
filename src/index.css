@@ -75,6 +75,20 @@ body {
   left: 1.2em;
 }
 
+#menu-free-banner {
+  height: 8em;
+  background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url(https://images.pexels.com/photos/162918/pizza-cheese-margarita-homemade-162918.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)no-repeat center center fixed;
+  width: 100%;
+  margin-bottom: 4em;
+}
+
+#menu-banner-text {
+  padding-top: 1.5em;
+  font-size: 1.8em;
+  color: white;
+  font-weight: 600;
+}
+
 #menu-total {
   font-size: 1.2em;
   margin-top: 2em;

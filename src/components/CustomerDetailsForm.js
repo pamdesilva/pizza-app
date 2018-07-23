@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
 import { Form, Button, Segment } from 'semantic-ui-react';
 
 class CustomerDetailsForm extends Component {

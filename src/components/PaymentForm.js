@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import {injectStripe, CardElement, CardNumberElement, CardCVCElement, CardExpiryElement } from 'react-stripe-elements';
+import {injectStripe, CardNumberElement, CardCVCElement, CardExpiryElement } from 'react-stripe-elements';
 import { Form, Button, Segment, Modal } from 'semantic-ui-react';
 
 class PaymentForm extends Component {
