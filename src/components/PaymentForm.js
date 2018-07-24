@@ -8,20 +8,22 @@ class PaymentForm extends Component {
   state = {
     cardNumber: false,
     cardExpiry: false,
-    cvc: false,
-    completed: false
+    cvc: false
   }
-
-  handleSubmit = (e) => {
-     e.preventDefault();
-     if (this.state.cardNumber && this.state.cardExpiry && this.state.cvc) {
-       this.setState({ completed: true });
-     }
-   };
 
    stripeElementChange = (element, name) => {
     if (!element.empty && element.complete) {
       this.setState({ [name]: true });
+    } else {
+      this.setState({ [name]: false });
+    }
+
+    const { cardNumber, cardExpiry, cvc} = this.state;
+
+    if (cardNumber && cardExpiry && cvc) {
+      this.props.formStatus(true);
+    } else {
+      this.props.formStatus(false);
     }
   }
 
@@ -46,10 +48,6 @@ class PaymentForm extends Component {
       };
     };
 
-    if (this.state.completed) {
-    return <Redirect push to='/confirmed' />;
-    }
-
     return (
       <div>
         <Modal trigger={<Button size='tiny' color='teal'>💳 Use test card</Button>} closeIcon>
@@ -57,13 +55,13 @@ class PaymentForm extends Component {
           <Modal.Content>
             <Modal.Description>
               <p><strong>Card number:</strong> 4242424242424242</p>
-              <p><strong>Expiration date:</strong> 20/20</p>
+              <p><strong>Expiration date:</strong> 12/20</p>
               <p><strong>CVC:</strong> 123</p>
             </Modal.Description>
           </Modal.Content>
         </Modal>
         <Segment>
-          <Form onSubmit={this.handleSubmit}>
+          <Form>
             <label>
               Card number
               <CardNumberElement
@@ -88,7 +86,6 @@ class PaymentForm extends Component {
             </label>
           </Form>
         </Segment>
-      <Button color='teal' size='large' id='checkout-btn' onClick={this.handleSubmit}>Place Order & Pay</Button>
     </div>
     );
   }

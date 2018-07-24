@@ -15,7 +15,7 @@ class Home extends Component {
   handlePostcodeSubmit = () => {
     const formattedPostcode = this.state.postcode.toUpperCase().replace(/\s/g, "");
 
-    if(formattedPostcode === 'BBB') {
+    if(formattedPostcode === 'LDN123') {
       this.props.history.push('/menu');
       this.setState({
         postcode: formattedPostcode
@@ -48,7 +48,7 @@ class Home extends Component {
                   <Form.Input placeholder='Enter your postcode' name='postcode' onChange={this.handleChange} value={this.state.postcode} width={4} id='home-postcode-input' required soze='large' />
                   <Form.Button type='submit' color='teal' size='large' width={4}>Get Started</Form.Button>
                 </Form.Group>
-                <Label color='orange' size='medium'><span role='img' aria-label='point-right'>👉</span> Hint: We only deliver to postcode 'bbb' right now</Label>
+                <Label color='orange' size='medium'><span role='img' aria-label='point-right'>👉</span> Hint: We only deliver to postcode 'LDN 123' right now</Label>
               </Form>
             </Container>
           </Container>

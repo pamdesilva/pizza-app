@@ -43,7 +43,7 @@ export const PizzaList = {
   },
   pizza8: {
     name: 'Cheese Fest',
-    toppings: ['parmegianno', 'mozarella', 'goat\'s cheese', 'extra virgin olive oil',],
+    toppings: ['parmegianno', 'mozarella', 'goat\'s cheese',],
     image: "/assets/pizzas/cheese.jpg",
     price: 1395
   },
