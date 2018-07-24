@@ -39,7 +39,6 @@ class App extends Component {
         customer: JSON.parse(localStorageCustomerDetails)
       });
     }
-    console.log(this.state.customer.firstName);
   }
 
   componentDidUpdate(){
@@ -65,12 +64,10 @@ class App extends Component {
     order[key] = order[key] - 1;
     let newTotal = this.state.orderTotal - (PizzaList[key].price);
 
-    if(order[key] == 0) {
+    if(order[key] === 0) {
       newTotal = this.state.orderTotal - PizzaList[key].price;
       delete order[key];
     }
-
-    console.log(newTotal);
 
     this.setState({
       order: order,

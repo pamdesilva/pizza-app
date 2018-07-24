@@ -24,7 +24,7 @@ class CustomerDetailsForm extends Component {
 
     return (
     <div>
-      <Button size='tiny' color='teal' onClick={this.props.loadSampleCustomer}>🧔🏻‍ Fill with fake customer</Button>
+      <Button size='tiny' color='teal' onClick={this.props.loadSampleCustomer}><span role='img' aria-label='man-with-beard'>🧔🏻‍</span> Fill with fake customer</Button>
       <Segment>
         <Form id='checkout-customer-form'>
           <Form.Group widths='equal'>

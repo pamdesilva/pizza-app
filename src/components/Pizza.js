@@ -14,7 +14,7 @@ class Pizza extends Component {
     return(
       <Grid.Column>
         <Segment id='pizza-card' raised>
-          <Image id='menu-pizza-img' src={image} />
+          <Image src={image} />
           <Header as='h3'>{name}</Header>
           <p>{formatToppings(toppings)}</p>
           <div id='pizza-order-info'>

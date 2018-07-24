@@ -50,7 +50,7 @@ class Home extends Component {
               <Header as='h1' id="home-header">Delicious pizzas delivered to your doorstep</Header>
               <Form size='large' onSubmit={this.handlePostcodeSubmit} fluid='true'>
                 <Form.Group >
-                  <Form.Input placeholder='Enter your postcode' name='postcode' onChange={this.handleChange} value={this.state.postcode} width={4} id='home-postcode-input' required soze='large' />
+                  <Form.Input placeholder='Enter your postcode' name='postcode' onChange={this.handleChange} value={this.state.postcode} width={4} required />
                   <Form.Button type='submit' color='teal' size='large' width={4}>Get Started</Form.Button>
                 </Form.Group>
                 <Label color='orange' size='medium'><span role='img' aria-label='point-right'>👉</span> Hint: We only deliver to postcode 'LDN 123' right now</Label>
@@ -61,7 +61,7 @@ class Home extends Component {
           <Modal open={!this.state.validPostcode} size='mini' id='home-modal'>
             <Modal.Header>We'd love to send you a slice of the action, but..</Modal.Header>
             <Modal.Content>
-              <p>It looks like you're located outside our delivery area 😿</p>
+              <p>It looks like you're located outside our delivery area <span role='img' aria-label='cat-sad'>😿</span></p>
             </Modal.Content>
             <Modal.Actions>
               <Button onClick={this.closeModal} color='violet'>Try a different postcode</Button>

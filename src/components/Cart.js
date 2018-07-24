@@ -27,8 +27,8 @@ class Cart extends Component {
           <NavBar orderTotal={this.props.orderTotal}/>
           <Header as='h1' id='page-header'>Your Order</Header>
           <Container id='cart-empty-box'>
-            <Header as='h3'>Your cart is empty. Add some pizzas 🍕🍕🍕</Header>
-            <Button as={Link} to='/menu' color='violet' size='large'>Menu</Button>
+            <p id='cart-empty-text'>Your cart is empty. Add some pizzas <span role='img' aria-label='pizza'>🍕🍕🍕</span></p>
+            <Button as={Link} to='/menu' color='teal' size='large'>Go to Menu</Button>
           </Container>
         </div>
       )

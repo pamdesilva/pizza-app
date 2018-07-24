@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
 import {injectStripe, CardNumberElement, CardCVCElement, CardExpiryElement } from 'react-stripe-elements';
 import { Form, Button, Segment, Modal } from 'semantic-ui-react';
 
@@ -50,7 +49,7 @@ class PaymentForm extends Component {
 
     return (
       <div>
-        <Modal trigger={<Button size='tiny' color='teal'>💳 Use test card</Button>} closeIcon>
+        <Modal trigger={<Button size='tiny' color='teal'><span role='img' aria-label='credit-card'>💳 </span>Use test card</Button>} closeIcon>
           <Modal.Header>Test Card Details</Modal.Header>
           <Modal.Content>
             <Modal.Description>
