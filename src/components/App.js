@@ -8,7 +8,6 @@ import Home from './Home';
 import Menu from './Menu';
 import Cart from './Cart';
 import Checkout from './Checkout';
-import Payment from './Payment';
 import Confirmation from './Confirmation';
 
 class App extends Component {
@@ -149,13 +148,6 @@ class App extends Component {
                   updateCustomerDetails={this.updateCustomerDetails}
                   loadSampleCustomer={this.loadSampleCustomer} />
               </StripeProvider> }
-            />
-            <Route exact path='/payment' render={ (props) =>
-              <Payment {...props}
-                orderTotal={this.state.orderTotal}
-                customerDetails={this.state.customer}
-                checkoutTotal={this.state.checkoutTotal} />
-               }
             />
           <Route exact path='/confirmed' render={ (props) =>
               <Confirmation {...props}

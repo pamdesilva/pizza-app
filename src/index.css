@@ -4,8 +4,8 @@ body {
 }
 
 #home-page {
-  background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
-  url(./assets/pizza-background.jpg) no-repeat center center fixed;
+  background: linear-gradient(to right, rgba(100,54,201,0.4) 0%, rgba(255,117,117,0.4) 100%),
+  url(/assets/pizza-background.jpg) no-repeat center center fixed;
   background-size: cover;
   position: fixed;
   top: 0;
@@ -34,6 +34,7 @@ body {
 }
 
 #navbar {
+  background: #6435c9;
   border-bottom: 1px solid #6435c947;
   -webkit-box-shadow: -2px 6px 28px 0px rgba(196,196,196,1);
   -moz-box-shadow: -2px 6px 28px 0px rgba(196,196,196,1);
@@ -43,13 +44,14 @@ body {
 #navbar-header {
   font-family: 'Bangers', cursive;
   font-size: 4em;
-  color: #6435c9;
+  color: #fff;
   margin-left: -30px;
 }
 
 #navbar-total {
   font-size: 1.2em;
   font-family: 'Quicksand', sans-serif;
+  color: #fff;
 }
 
 #navbar-btn {
@@ -57,6 +59,7 @@ body {
 }
 
 #page-header {
+  color: #ff7575;
   text-align: center;
   margin-bottom: 1em;
   margin-top: 1em;
@@ -76,14 +79,14 @@ body {
 }
 
 #menu-free-banner {
-  height: 8em;
+  height: 6em;
   background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url(https://images.pexels.com/photos/162918/pizza-cheese-margarita-homemade-162918.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)no-repeat center center fixed;
   width: 100%;
   margin-bottom: 4em;
 }
 
 #menu-banner-text {
-  padding-top: 1.5em;
+  padding-top: 1em;
   font-size: 1.8em;
   color: white;
   font-weight: 600;

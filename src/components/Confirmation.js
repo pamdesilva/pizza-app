@@ -30,7 +30,7 @@ class Confirmation extends Component {
           <p><strong>{address}</strong></p>
           <p>within the next hour 🛵 </p>
           <Image centered id='confirmed-img'  src='https://media.giphy.com/media/j1p1Z7XaX8HEQ/giphy.gif' />
-          <Button onClick={this.handleClick} color='violet' size='large' id='confirmed-new-btn'>Start a fresh order</Button>
+          <Button onClick={this.handleClick} color='teal' size='large' id='confirmed-new-btn'>Start a fresh order</Button>
         </Container>
       </div>
     )

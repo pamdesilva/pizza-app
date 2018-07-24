@@ -88,7 +88,7 @@ class PaymentForm extends Component {
             </label>
           </Form>
         </Segment>
-      <Button color='violet' size='large' id='checkout-btn' onClick={this.handleSubmit}>Place Order & Pay</Button>
+      <Button color='teal' size='large' id='checkout-btn' onClick={this.handleSubmit}>Place Order & Pay</Button>
     </div>
     );
   }

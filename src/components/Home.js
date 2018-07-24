@@ -46,9 +46,9 @@ class Home extends Component {
               <Form size='large' onSubmit={this.handlePostcodeSubmit} fluid='true'>
                 <Form.Group >
                   <Form.Input placeholder='Enter your postcode' name='postcode' onChange={this.handleChange} value={this.state.postcode} width={4} id='home-postcode-input' required soze='large' />
-                  <Form.Button type='submit' color='violet' size='large' width={4}>Get Started</Form.Button>
+                  <Form.Button type='submit' color='teal' size='large' width={4}>Get Started</Form.Button>
                 </Form.Group>
-                <Label color='teal' size='medium'><span role='img' aria-label='point-right'>👉</span> Hint: We only deliver to postcode 'bbb' right now</Label>
+                <Label color='orange' size='medium'><span role='img' aria-label='point-right'>👉</span> Hint: We only deliver to postcode 'bbb' right now</Label>
               </Form>
             </Container>
           </Container>
