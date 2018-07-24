@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Form, Button, Segment } from 'semantic-ui-react';
 
 class CustomerDetailsForm extends Component {
+
+  static propTypes = {
+    customerDetails: PropTypes.object,
+    loadSampleCustomer: PropTypes.func.isRequired,
+    updateCustomerDetails: PropTypes.func.isRequired,
+  }
 
   handleChange = (e) => {
     const updateCustomer = {

@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { Elements } from 'react-stripe-elements';
 import { Grid, Container, Header, Button } from 'semantic-ui-react';
+import { formatPrice } from '../helpers';
 
 import NavBar from './NavBar';
 import CustomerDetailsForm from './CustomerDetailsForm';
 import PaymentForm from './PaymentForm';
 
 class Checkout extends Component {
+
+  static propTypes = {
+    orderTotal: PropTypes.number,
+    customerDetails: PropTypes.object,
+    loadSampleCustomer: PropTypes.func.isRequired,
+    updateCustomerDetails: PropTypes.func.isRequired,
+    checkoutTotal: PropTypes.number
+  }
 
   state = {
     customerForm: false,
@@ -46,7 +56,7 @@ class Checkout extends Component {
 
     return(
       <div>
-        <NavBar order={this.props.order} orderTotal={this.props.orderTotal}/>
+        <NavBar orderTotal={this.props.orderTotal}/>
         <Container id='payment-page'>
           <Header as='h1' id="page-header">Checkout</Header>
           <Grid stackable columns={2}>
@@ -54,7 +64,6 @@ class Checkout extends Component {
               <Header as='h3'>Your Details</Header>
               <CustomerDetailsForm
                 customerDetails={this.props.customerDetails}
-                checkoutTotal={this.props.checkoutTotal}
                 updateCustomerDetails={this.props.updateCustomerDetails}
                 loadSampleCustomer={this.props.loadSampleCustomer}
                 formStatus={this.checkCustomerForm}
@@ -65,7 +74,7 @@ class Checkout extends Component {
               <Elements>
                 <PaymentForm formStatus={this.checkPaymentForm} />
               </Elements>
-              <Button color='teal' size='large' id='checkout-btn' onClick={this.handleSubmit}>Place Order & Pay</Button>
+              <Button color='teal' size='large' id='checkout-btn' onClick={this.handleSubmit}>Place Order & Pay {formatPrice(this.props.checkoutTotal)} </Button>
             </Grid.Column>
           </Grid>
         </Container>

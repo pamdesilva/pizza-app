@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { Menu, Icon } from 'semantic-ui-react';
 import { formatPrice } from '../helpers';
 
 class NavBar extends Component{
-  state = {
-    cartEmpty: true
+
+  static propTypes = {
+    orderTotal: PropTypes.number
   }
 
   render(){

@@ -130,7 +130,6 @@ class App extends Component {
               <Menu {...props}
                 orderTotal={this.state.orderTotal}
                 addToOrder={this.addToOrder}
-                removeFromOrder={this.removeFromOrder}
                 order={this.state.order} /> } />
             <Route exact path='/cart' render={ (props) =>
               <Cart {...props}
@@ -151,9 +150,7 @@ class App extends Component {
             />
           <Route exact path='/confirmed' render={ (props) =>
               <Confirmation {...props}
-                orderTotal={this.state.orderTotal}
                 customerDetails={this.state.customer}
-                checkoutTotal={this.state.checkoutTotal}
                 clearState={this.clearState}
                 />
               }

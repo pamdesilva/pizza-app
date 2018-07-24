@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { Container, Header, Menu, Image, Button } from 'semantic-ui-react';
 
 class Confirmation extends Component {
+  static propTypes = {
+    customerDetails: PropTypes.object,
+    clearState: PropTypes.func.isRequired
+  }
+
   state = {
     newOrder: false
   }

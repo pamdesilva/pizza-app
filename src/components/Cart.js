@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link  } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { Button, Container, Header } from 'semantic-ui-react';
 import { formatPrice } from '../helpers';
 import NavBar from './NavBar';
@@ -7,8 +8,15 @@ import Order from './Order';
 
 class Cart extends Component {
 
-  render(){
+  static propTypes = {
+    orderTotal: PropTypes.number,
+    addToOrder: PropTypes.func.isRequired,
+    removeFromOrder: PropTypes.func.isRequired,
+    order: PropTypes.array,
+    updateCheckoutTotal: PropTypes.func.isRequired,
+  }
 
+  render(){
     const totalPizzaPrice = this.props.orderTotal;
     const deliveryPrice = this.props.orderTotal < 1200 ? 500 : 0;
     const checkoutTotal = totalPizzaPrice + deliveryPrice;
@@ -16,7 +24,7 @@ class Cart extends Component {
     if (this.props.orderTotal === 0) {
       return (
         <div>
-          <NavBar order={this.props.order} orderTotal={this.props.orderTotal}/>
+          <NavBar orderTotal={this.props.orderTotal}/>
           <Header as='h1' id='page-header'>Your Order</Header>
           <Container id='cart-empty-box'>
             <Header as='h3'>Your cart is empty. Add some pizzas 🍕🍕🍕</Header>
@@ -28,7 +36,7 @@ class Cart extends Component {
 
     return(
       <div>
-        <NavBar order={this.props.order} orderTotal={this.props.orderTotal}/>
+        <NavBar orderTotal={this.props.orderTotal}/>
           <Container id='cart-header'>
             <Button as={Link} to='/menu' color='teal' size='large' id='cart-menu-btn'>Back to Menu</Button>
             <Header as='h1' id='page-header'>Your Cart</Header>
@@ -43,7 +51,7 @@ class Cart extends Component {
               <p>Order: <strong>{formatPrice(totalPizzaPrice)}</strong></p>
               <p>Delivery (free over £12): <strong>{formatPrice(deliveryPrice)}</strong></p>
               <p>Total: <strong>{formatPrice(checkoutTotal)}</strong></p>
-              <Button as={Link} to='/checkout' id='cart-checkout-btn' size='large' color='teal' onClick={() => this.props.updateCheckoutTotal(checkoutTotal)}>Go to Payment</Button>
+              <Button as={Link} to='/checkout' id='cart-checkout-btn' color='teal' onClick={() => this.props.updateCheckoutTotal(checkoutTotal)}>Go to Payment</Button>
             </Container>
           </Container>
       </div>

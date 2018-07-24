@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Grid, Image, Button, Segment, Header } from 'semantic-ui-react';
 import { formatPrice, formatToppings } from '../helpers';
 
 class Pizza extends Component {
+  static propTypes = {
+    addToOrder: PropTypes.func.isRequired,
+    details: PropTypes.object.isRequired
+  }
+
   render(){
     const {name, toppings, image, price } = this.props.details;
     return(

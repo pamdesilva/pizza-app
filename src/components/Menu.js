@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link  } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { Header, Container, Button } from 'semantic-ui-react';
 import NavBar from './NavBar';
 import PizzaContainer from './PizzaContainer';
@@ -18,5 +19,11 @@ const Menu = (props) => (
     </Container>
   </div>
 );
+
+Menu.propTypes = {
+  order: PropTypes.array,
+  orderTotal: PropTypes.number,
+  addToOrder: PropTypes.func.isRequired
+};
 
 export default Menu;

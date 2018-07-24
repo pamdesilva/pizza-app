@@ -1,8 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Grid } from 'semantic-ui-react';
 import { PizzaList } from '../data/pizzas';
 import Pizza from './Pizza';
-
 
 const PizzaContainer = (props) => {
   let pizzas = Object.keys(PizzaList).map( key => {
@@ -19,5 +19,9 @@ const PizzaContainer = (props) => {
       </Grid>
   );
 }
+
+PizzaContainer.propTypes = {
+  addToOrder: PropTypes.func.isRequired
+};
 
 export default PizzaContainer;

@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Grid, Image, Segment, Icon } from 'semantic-ui-react';
 import { PizzaList } from '../data/pizzas';
 import { formatPrice } from '../helpers';
 
 class Order extends Component {
+
+  static propTypes = {
+    addToOrder: PropTypes.func.isRequired,
+    removeFromOrder: PropTypes.func.isRequired,
+    order: PropTypes.array
+  }
 
   renderOrder = (key) => {
     const pizza = PizzaList[key];

@@ -1,7 +1,12 @@
 import React, { Component} from 'react';
+import PropTypes from 'prop-types';
 import { Container, Header, Form, Label, Modal, Button } from 'semantic-ui-react';
 
 class Home extends Component {
+
+  static propTypes = {
+    updatePostcode: PropTypes.func.isRequired
+  }
 
   state = {
     postcode: '',
