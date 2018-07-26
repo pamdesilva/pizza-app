@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link  } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Button, Container, Header } from 'semantic-ui-react';
 import { formatPrice } from '../helpers';
+
 import NavBar from './NavBar';
 import Order from './Order';
+import Footer from './Footer';
 
 class Cart extends Component {
 
@@ -23,23 +25,27 @@ class Cart extends Component {
 
     if (this.props.orderTotal === 0) {
       return (
-        <div>
+        <Fragment>
           <NavBar orderTotal={this.props.orderTotal}/>
-          <Header as='h1' id='page-header'>Your Order</Header>
-          <Container id='cart-empty-box'>
-            <p id='cart-empty-text'>Your cart is empty. Add some pizzas <span role='img' aria-label='pizza'>🍕🍕🍕</span></p>
-            <Button as={Link} to='/menu' color='teal' size='large'>Go to Menu</Button>
+          <Container id='page-container'>
+            <Header as='h1' id='page-header'>Your Order</Header>
+            <Container id='cart-empty-box'>
+              <p id='cart-empty-text'>Your cart is empty. Add some pizzas <span role='img' aria-label='pizza'>🍕🍕🍕</span></p>
+              <Button as={Link} to='/menu' color='teal' size='large'>Go to Menu</Button>
+            </Container>
           </Container>
-        </div>
+          <Footer />
+        </Fragment>
       )
     }
 
     return(
-      <div>
+      <Fragment>
         <NavBar orderTotal={this.props.orderTotal}/>
+        <Container id='page-container'>
           <Container id='cart-header'>
-            <Button as={Link} to='/menu' color='teal' size='large' id='cart-menu-btn'>Back to Menu</Button>
             <Header as='h1' id='page-header'>Your Cart</Header>
+            <Button as={Link} to='/menu' color='teal' size='large' id='cart-menu-btn'>Back to Menu</Button>
           </Container>
           <Container id='order-box'>
             <Order
@@ -53,8 +59,10 @@ class Cart extends Component {
               <p>Total: <strong>{formatPrice(checkoutTotal)}</strong></p>
               <Button as={Link} to='/checkout' id='cart-checkout-btn' color='teal' onClick={() => this.props.updateCheckoutTotal(checkoutTotal)}>Go to Payment</Button>
             </Container>
+            </Container>
           </Container>
-      </div>
+          <Footer />
+      </Fragment>
     );
   }
 }

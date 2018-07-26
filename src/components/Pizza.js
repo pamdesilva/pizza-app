@@ -12,7 +12,7 @@ class Pizza extends Component {
   render(){
     const {name, toppings, image, price } = this.props.details;
     return(
-      <Grid.Column>
+      <Grid.Column mobile={5} tablet={8} computer={5}>
         <Segment id='pizza-card' raised>
           <Image src={image} />
           <Header as='h3'>{name}</Header>

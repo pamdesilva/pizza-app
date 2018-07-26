@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Container, Header, Menu, Image, Button } from 'semantic-ui-react';
+
+import Footer from './Footer';
 
 class Confirmation extends Component {
   static propTypes = {
@@ -26,11 +28,11 @@ class Confirmation extends Component {
     const { firstName, address } = this.props.customerDetails;
 
     return(
-      <div>
+      <Fragment>
       <Menu secondary id='navbar'>
         <Menu.Item header id='navbar-header'>Slices</Menu.Item>
       </Menu>
-        <Container textAlign='center'>
+        <Container textAlign='center' id='confirmation-container'>
           <Header as='h1' id='page-header'>Thanks, {firstName}!</Header>
           <p id='confirmation-text'>Your order, <strong>#2222</strong> is now being prepped and will be delivered to: </p>
           <p><strong>{address}</strong></p>
@@ -38,7 +40,8 @@ class Confirmation extends Component {
           <Image centered id='confirmation-img'  src='https://media.giphy.com/media/j1p1Z7XaX8HEQ/giphy.gif' />
           <Button onClick={this.handleClick} color='teal' size='large' id='confirmation-new-btn'>Start a fresh order</Button>
         </Container>
-      </div>
+        <Footer />
+      </Fragment>
     )
   }
 };

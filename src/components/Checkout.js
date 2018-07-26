@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Elements } from 'react-stripe-elements';
@@ -8,6 +8,7 @@ import { formatPrice } from '../helpers';
 import NavBar from './NavBar';
 import CustomerDetailsForm from './CustomerDetailsForm';
 import PaymentForm from './PaymentForm';
+import Footer from './Footer';
 
 class Checkout extends Component {
 
@@ -55,9 +56,9 @@ class Checkout extends Component {
     }
 
     return(
-      <div>
+      <Fragment>
         <NavBar orderTotal={this.props.orderTotal}/>
-        <Container id='payment-page'>
+        <Container id='page-container'>
           <Header as='h1' id="page-header">Checkout</Header>
           <Grid stackable columns={2}>
             <Grid.Column width={10}>
@@ -78,7 +79,8 @@ class Checkout extends Component {
             </Grid.Column>
           </Grid>
         </Container>
-      </div>
+        <Footer />
+      </Fragment>
     )
   }
 }
