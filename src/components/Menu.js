@@ -17,9 +17,9 @@ const Menu = (props) => (
       <Container textAlign='center' id='menu-free-banner'>
         <p id='menu-banner-text'>Free delivery for orders over £12</p>
       </Container>
-    <Container id='menu-pizza-container'>
-        <PizzaContainer addToOrder={props.addToOrder} />
-    </Container>
+      <Container id='menu-pizza-container'>
+          <PizzaContainer addToOrder={props.addToOrder} />
+      </Container>
     </Container>
     <Footer />
   </Fragment>

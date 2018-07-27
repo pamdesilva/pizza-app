@@ -50,10 +50,10 @@ class Home extends Component {
             <Header as='h1' id="home-header">Delicious pizzas delivered to your doorstep</Header>
             <Form size='large' onSubmit={this.handlePostcodeSubmit} fluid='true'>
               <Form.Group >
-                <Form.Input placeholder='Enter your postcode' name='postcode' onChange={this.handleChange} value={this.state.postcode} width={4} required />
-                <Form.Button type='submit' color='teal' size='large' width={4}>Get Started</Form.Button>
+                <Form.Input placeholder='Enter your postcode' name='postcode' onChange={this.handleChange} value={this.state.postcode} width={4} required id='home-form'/>
+                <Form.Button type='submit' color='teal' size='large' width={4} id='home-btn'>Get Started</Form.Button>
               </Form.Group>
-              <Label color='orange' size='medium'><span role='img' aria-label='point-right'>👉</span> Hint: We only deliver to postcode 'LDN 123' right now</Label>
+              <Label color='orange' size='medium' id='home-label'><span role='img' aria-label='point-right'>👉</span> Hint: We only deliver to postcode 'LDN 123' right now</Label>
             </Form>
           </Container>
         </Container>
@@ -67,7 +67,7 @@ class Home extends Component {
             <Button onClick={this.closeModal} color='violet'>Try a different postcode</Button>
           </Modal.Actions>
        </Modal>
-      </div>
+     </div>
     )
   }
 };
