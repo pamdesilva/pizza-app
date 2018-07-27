@@ -203,7 +203,8 @@
   margin-bottom: 1em;
 }
 
-#checkout-customer-form {
+#checkout-customer-form,
+#checkout-subheader {
   font-family: 'Quicksand', sans-serif;
 }
 
@@ -245,8 +246,4 @@ input,
 
 #confirmation-new-btn {
   margin-top: 3em;
-}
-
-Button:hover {
-  background: linear-gradient(to right, rgba(100,54,201,0.4) 0%, rgba(255,117,117,0.4) 100%);
 }

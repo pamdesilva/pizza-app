@@ -62,7 +62,7 @@ class Checkout extends Component {
           <Header as='h1' id="page-header">Checkout</Header>
           <Grid stackable columns={2}>
             <Grid.Column width={10}>
-              <Header as='h3'>Your Details</Header>
+              <Header as='h3' id='checkout-subheader'>Your Details</Header>
               <CustomerDetailsForm
                 customerDetails={this.props.customerDetails}
                 updateCustomerDetails={this.props.updateCustomerDetails}
@@ -71,7 +71,7 @@ class Checkout extends Component {
               />
             </Grid.Column>
             <Grid.Column width={6}>
-              <Header as='h3'>Payment</Header>
+              <Header as='h3' id='checkout-subheader'>Payment</Header>
               <Elements>
                 <PaymentForm formStatus={this.checkPaymentForm} />
               </Elements>
