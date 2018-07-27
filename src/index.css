@@ -133,6 +133,8 @@
 #pizza-card {
   height: 32em;
   position: relative;
+  border: 1px solid #6435c9;
+  box-shadow: 12px 12px 0px -4px rgba(100,53,201,0.79);
 }
 
 #pizza-order-info {
