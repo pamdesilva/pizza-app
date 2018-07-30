@@ -1,6 +1,6 @@
 # React Pizza Store 🍕 🍕 🍕
 
-A simple front-end pizza store built using React, Semantic UI React and a dash of Stripe Elements. I did this project to get more comfortable with React.
+A simple front-end pizza store built using React, Semantic UI React and a dash of Stripe Elements. I did this project to get more comfortable with React. [View demo](https://slices-pizza.netlify.com/).
 
 ## Features ✨
 
