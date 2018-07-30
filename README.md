@@ -24,26 +24,7 @@ A simple front-end pizza store built using React, Semantic UI React and a dash o
 
 ## Get up and running 🚀
 
-**Install**
-
-```
-yarn install
-```
-
-**Start**
-
-```
-yarn start
-```
-
-**Test**
-
-```
-yarn test
-```
-
-**Build**
-
-```
-yarn build
-```
+    yarn install
+    yarn start
+    yarn test
+    yarn build
